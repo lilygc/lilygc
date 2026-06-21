@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journalism — Lily Casura, MSW</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1a1a; --paper: #f7f4ef; --mist: #e8e3da;
+      --sage: #5c7a6b; --rust: #8b4a2f; --mid: #6b6560; --white: #ffffff;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--paper); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 17px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--paper); border-bottom: 1px solid var(--mist); padding: 0 2.5rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 1.6rem; list-style: none; }
+    .nav-links a { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--sage); }
+    .page-header { padding: 10rem 5rem 5rem; max-width: 760px; }
+    .section-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.75rem; }
+    .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 600; line-height: 1.1; margin-bottom: 1.5rem; }
+    .coming-soon { padding: 4rem 5rem 8rem; border-top: 1px solid var(--mist); font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; color: var(--mid); }
+    footer { background: #111; color: #555; text-align: center; padding: 1.5rem; font-size: 0.75rem; }
+    @media (max-width: 900px) { .nav-links { display: none; } .page-header { padding: 7rem 2rem 3rem; } .coming-soon { padding: 3rem 2rem 6rem; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-name" href="index.html">Lily Casura, MSW</a>
+    <ul class="nav-links">
+      <li><a href="research.html">Research</a></li>
+      <li><a href="data.html">Data Mastery</a></li>
+      <li><a href="journalism.html">Journalism</a></li>
+      <li><a href="ai.html">AI & Consulting</a></li>
+      <li><a href="service.html">Service</a></li>
+      <li><a href="grants.html">Grants & Recognition</a></li>
+      <li><a href="speaking.html">Speaking</a></li>
+      <li><a href="in-their-words.html">In Their Words</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="page-header">
+    <p class="section-label">Lily Casura, MSW</p>
+    <h1 class="page-title">Journalism</h1>
+  </div>
+  <div class="coming-soon">Content coming soon.</div>
+  <footer>&copy; 2026 Lily Casura, MSW &nbsp;·&nbsp; lilygc.com</footer>
+</body>
+</html>
