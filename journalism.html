@@ -99,8 +99,6 @@
       line-height: 1.8;
       margin-bottom: 3rem;
     }
-
-    /* ── FILTER BAR ── */
     .filter-bar {
       padding: 0 5rem 2rem;
       display: flex;
@@ -125,8 +123,6 @@
       border-color: var(--sage);
       color: var(--white);
     }
-
-    /* ── CLIPS LIST ── */
     .clips-section {
       padding: 0 5rem 6rem;
     }
@@ -141,7 +137,7 @@
     }
     .clip-item {
       display: grid;
-      grid-template-columns: 120px 1fr auto;
+      grid-template-columns: 140px 1fr auto;
       gap: 1.5rem;
       align-items: baseline;
       padding: 1rem 0;
@@ -171,6 +167,12 @@
       line-height: 1.5;
       color: var(--ink);
     }
+    .clip-note {
+      font-size: 0.82rem;
+      color: var(--mid);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+    }
     .clip-type {
       font-family: 'DM Mono', monospace;
       font-size: 0.62rem;
@@ -179,7 +181,6 @@
       color: var(--rust);
       white-space: nowrap;
     }
-
     footer {
       background: #111;
       color: #555;
@@ -227,6 +228,8 @@
     <button class="filter-btn" onclick="filterClips('medium', this)">Medium</button>
     <button class="filter-btn" onclick="filterClips('rivard', this)">Rivard Report</button>
     <button class="filter-btn" onclick="filterClips('expressnews', this)">Express-News</button>
+    <button class="filter-btn" onclick="filterClips('napa', this)">Napa Valley Reg.</button>
+    <button class="filter-btn" onclick="filterClips('townsend', this)">Townsend Letter</button>
     <button class="filter-btn" onclick="filterClips('academic', this)">Academic</button>
     <button class="filter-btn" onclick="filterClips('other', this)">Other</button>
   </div>
@@ -237,361 +240,367 @@
 
     <div class="clip-item" data-pub="academic">
       <span class="clip-pub">Jnl Mil Vet</span>
-      <span class="clip-title"><a href="https://utppublishing.com/doi/10.3138/jmvfh-2025-0048" target="_blank">"When the Golden Years Are Not So Golden: Aging Women Veterans, MST, PTSD and Homelessness"</a> <em style="font-size:0.85rem;color:var(--mid)">with Richard Harris, Ph.D.</em></span>
-      <span class="clip-type">Peer-reviewed · 2026</span>
+      <div class="clip-title"><a href="https://utppublishing.com/doi/10.3138/jmvfh-2025-0048" target="_blank">"When the Golden Years Are Not So Golden: Aging Women Veterans, MST, PTSD and Homelessness"</a><br><span class="clip-note">with Richard Harris, Ph.D. · Journal of Military, Veteran and Family Health</span></div>
+      <span class="clip-type">Peer-Reviewed · Jun 2026</span>
     </div>
 
     <div class="clip-item" data-pub="academic">
-      <span class="clip-pub">Springer</span>
-      <span class="clip-title"><a href="https://a.co/d/7kxjAlH" target="_blank">"Women Veterans, Poverty, and Homelessness"</a> <em style="font-size:0.85rem;color:var(--mid)">International Handbook of the Demography of Poverty and Inequality, with Richard Harris, Ph.D.</em></span>
-      <span class="clip-type">Book Chapter · 2025</span>
+      <span class="clip-pub">Springer Nature</span>
+      <div class="clip-title"><a href="https://a.co/d/7kxjAlH" target="_blank">"Women Veterans, Poverty, and Homelessness"</a><br><span class="clip-note">with Richard Harris, Ph.D. · International Handbook of the Demography of Poverty and Inequality</span></div>
+      <span class="clip-type">Book Chapter · Jun 2025</span>
     </div>
 
     <div class="clip-item" data-pub="academic">
-      <span class="clip-pub">Oxford</span>
-      <span class="clip-title"><a href="https://a.co/d/eDcVW54" target="_blank">"On Doing Public Scholarship: A Dialogue"</a> <em style="font-size:0.85rem;color:var(--mid)">The Oxford Handbook of Sociology for Social Justice, with Rogelio Saenz, Ph.D.</em></span>
-      <span class="clip-type">Book Chapter · 2024</span>
+      <span class="clip-pub">Oxford Univ. Press</span>
+      <div class="clip-title"><a href="https://a.co/d/eDcVW54" target="_blank">"On Doing Public Scholarship: A Dialogue"</a><br><span class="clip-note">with Rogelio Sáenz, Ph.D. · The Oxford Handbook of Sociology for Social Justice</span></div>
+      <span class="clip-type">Book Chapter · Sep 2024</span>
     </div>
 
     <div class="clip-item" data-pub="expressnews">
       <span class="clip-pub">Express-News</span>
-      <span class="clip-title"><a href="https://www.expressnews.com/opinion/commentary/article/Commentary-We-need-to-break-the-17175804.php" target="_blank">"We Need to Break the Multigenerational Cycle of Family Violence"</a></span>
-      <span class="clip-type">Commentary · 2022</span>
+      <div class="clip-title"><a href="https://www.expressnews.com/opinion/commentary/article/Commentary-We-need-to-break-the-17175804.php" target="_blank">"We Need to Break the Multigenerational Cycle of Family Violence"</a></div>
+      <span class="clip-type">Commentary · May 2022</span>
     </div>
 
     <div class="clip-item" data-pub="expressnews">
       <span class="clip-pub">Express-News</span>
-      <span class="clip-title"><a href="https://www.expressnews.com/opinion/commentary/article/Commentary-Spike-in-domestic-violence-is-an-15791617.php" target="_blank">"Spike in Domestic Violence is an Epidemic within COVID"</a></span>
-      <span class="clip-type">Commentary · 2020</span>
+      <div class="clip-title"><a href="https://www.expressnews.com/opinion/commentary/article/Commentary-Spike-in-domestic-violence-is-an-15791617.php" target="_blank">"Spike in Domestic Violence is an Epidemic within COVID"</a></div>
+      <span class="clip-type">Commentary · Dec 2020</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="https://lilygc.medium.com/bexar-county-election-day-faqs-3fc98290117b" target="_blank">"Bexar County Election Day FAQs"</a></span>
-      <span class="clip-type">Article · 2020</span>
+      <div class="clip-title"><a href="https://lilygc.medium.com/bexar-county-election-day-faqs-3fc98290117b" target="_blank">"Bexar County Election Day FAQs"</a></div>
+      <span class="clip-type">Article · Nov 2020</span>
     </div>
 
-    <div class="clip-item" data-pub="other">
+    <div class="clip-item" data-pub="academic">
       <span class="clip-pub">N-IUSSP</span>
-      <span class="clip-title"><a href="https://www.niussp.org/article/frontline-workers-in-the-u-s-race-ethnicity/" target="_blank">"Frontline Workers in the U.S.: Race, Ethnicity, and Gender"</a></span>
-      <span class="clip-type">Academic Journal · 2020</span>
+      <div class="clip-title"><a href="https://www.niussp.org/article/frontline-workers-in-the-u-s-race-ethnicity/" target="_blank">"Frontline Workers in the U.S.: Race, Ethnicity, and Gender"</a><br><span class="clip-note">International Union for the Scientific Study of Population</span></div>
+      <span class="clip-type">Academic Journal · Sep 2020</span>
     </div>
 
     <div class="clip-item" data-pub="expressnews">
       <span class="clip-pub">Express-News</span>
-      <span class="clip-title"><a href="http://digital.olivesoftware.com/Olive/ODN/SanAntonioExpressNews/PrintArticle.aspx?doc=SAEN%2F2020%2F07%2F11&entity=ar01900" target="_blank">"COVID, Poverty Burden Frontline Workers"</a></span>
-      <span class="clip-type">Commentary · 2020</span>
+      <div class="clip-title"><a href="http://digital.olivesoftware.com/Olive/ODN/SanAntonioExpressNews/PrintArticle.aspx?doc=SAEN%2F2020%2F07%2F11&entity=ar01900&ts=20200711081235&uq=20200710054916&mode=text" target="_blank">"COVID, Poverty Burden Frontline Workers"</a></div>
+      <span class="clip-type">Commentary · Jul 2020</span>
     </div>
 
     <div class="decade-heading">2019</div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="https://medium.com/@ywcasa/the-wage-gap-is-shocking-and-latinas-in-particular-suffer-from-it-f757539caf73" target="_blank">"The Wage Gap is Shocking — and Latinas in Particular Suffer from It"</a></span>
-      <span class="clip-type">Commentary · 2019</span>
+      <div class="clip-title"><a href="https://medium.com/@ywcasa/the-wage-gap-is-shocking-and-latinas-in-particular-suffer-from-it-f757539caf73" target="_blank">"The Wage Gap is Shocking — and Latinas in Particular Suffer from It"</a></div>
+      <span class="clip-type">Commentary · Nov 2019</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="https://medium.com/@lilygc/what-i-learned-from-looking-at-100k-domestic-violence-cases-in-san-antonio-and-bexar-county-1345c3f9d08b" target="_blank">"What I Learned from Looking at ~100K Domestic Violence Cases in San Antonio and Bexar County"</a> <em style="font-size:0.85rem;color:var(--mid)">Editors' pick</em></span>
-      <span class="clip-type">Feature · 2019</span>
+      <div class="clip-title"><a href="https://medium.com/@lilygc/what-i-learned-from-looking-at-100k-domestic-violence-cases-in-san-antonio-and-bexar-county-1345c3f9d08b" target="_blank">"What I Learned from Looking at ~100K Domestic Violence Cases in San Antonio and Bexar County"</a><br><span class="clip-note">Editors' pick</span></div>
+      <span class="clip-type">Feature · Oct 2019</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/RRYWCAWWV" target="_blank">"Too Few Degrees of Separation: Domestic Violence in San Antonio"</a></span>
-      <span class="clip-type">Commentary · 2019</span>
+      <div class="clip-title"><a href="http://bit.ly/RRYWCAWWV" target="_blank">"Too Few Degrees of Separation: Domestic Violence in San Antonio"</a></div>
+      <span class="clip-type">Commentary · Oct 2019</span>
     </div>
 
     <div class="clip-item" data-pub="other">
       <span class="clip-pub">UTSA</span>
-      <span class="clip-title"><a href="http://bit.ly/20YearsDVMisdemeanors" target="_blank">"Examining 20 Years of Misdemeanor Family Violence Offenses in Bexar County"</a> <em style="font-size:0.85rem;color:var(--mid)">with Roger Enriquez, J.D.</em></span>
-      <span class="clip-type">White Paper · 2019</span>
+      <div class="clip-title"><a href="http://bit.ly/20YearsDVMisdemeanors" target="_blank">"Examining 20 Years of Misdemeanor Family Violence Offenses in Bexar County"</a><br><span class="clip-note">with Roger Enriquez, J.D.</span></div>
+      <span class="clip-type">White Paper · Sep 2019</span>
     </div>
 
     <div class="clip-item" data-pub="other">
       <span class="clip-pub">UTSA</span>
-      <span class="clip-title"><a href="http://bit.ly/10YearsDVFelonies" target="_blank">"Examining 10 Years of Felony Family Violence Offenses in Bexar County"</a> <em style="font-size:0.85rem;color:var(--mid)">with Roger Enriquez, J.D.</em></span>
-      <span class="clip-type">White Paper · 2019</span>
+      <div class="clip-title"><a href="http://bit.ly/10YearsDVFelonies" target="_blank">"Examining 10 Years of Felony Family Violence Offenses in Bexar County"</a><br><span class="clip-note">with Roger Enriquez, J.D.</span></div>
+      <span class="clip-type">White Paper · Aug 2019</span>
+    </div>
+
+    <div class="clip-item" data-pub="other">
+      <span class="clip-pub">UTSA</span>
+      <div class="clip-title"><a href="https://www.dropbox.com/s/5h7eosbhxd0wgou/house-flipping-final.pdf?dl=0" target="_blank">"Home Flipping Trends in San Antonio"</a><br><span class="clip-note">with Roger Enriquez, J.D.</span></div>
+      <span class="clip-type">White Paper · Jul 2019</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="https://medium.com/@lilygc/save-battered-for-fish-sticks-and-chicken-tenders-domestic-violence-language-needs-an-upgrade-380dc8f3d175" target="_blank">"Save 'Battered' for Fish Sticks and Chicken Tenders: Domestic Violence Language Needs an Upgrade"</a> <em style="font-size:0.85rem;color:var(--mid)">Editors' pick</em></span>
-      <span class="clip-type">Commentary · 2019</span>
+      <div class="clip-title"><a href="https://medium.com/@lilygc/save-battered-for-fish-sticks-and-chicken-tenders-domestic-violence-language-needs-an-upgrade-380dc8f3d175" target="_blank">"Save 'Battered' for Fish Sticks and Chicken Tenders: Domestic Violence Language Needs an Upgrade"</a><br><span class="clip-note">Editors' pick</span></div>
+      <span class="clip-type">Commentary · Jul 2019</span>
     </div>
 
     <div class="clip-item" data-pub="expressnews">
       <span class="clip-pub">Express-News</span>
-      <span class="clip-title"><a href="http://bit.ly/SATXDVNos" target="_blank">"Lack of Family Violence Data Hinders Progress"</a></span>
-      <span class="clip-type">Commentary · 2019</span>
+      <div class="clip-title"><a href="http://bit.ly/SATXDVNos" target="_blank">"Lack of Family Violence Data Hinders Progress"</a></div>
+      <span class="clip-type">Commentary · Jul 2019</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/RRDVIPV" target="_blank">"Recognizing Domestic Violence as an Economic Issue Can Save Lives"</a></span>
-      <span class="clip-type">Commentary · 2019</span>
+      <div class="clip-title"><a href="http://bit.ly/RRDVIPV" target="_blank">"Recognizing Domestic Violence as an Economic Issue Can Save Lives"</a></div>
+      <span class="clip-type">Commentary · Jun 2019</span>
     </div>
 
     <div class="clip-item" data-pub="other">
       <span class="clip-pub">City of SA</span>
-      <span class="clip-title"><span class="no-link">"The Status of Women in San Antonio"</span> <em style="font-size:0.85rem;color:var(--mid)">with Rogelio Sáenz, Ph.D. — <a href="https://www.sanantonio.gov/Portals/0/Files/health/News/Reports/StatusOfWomen/StatusOfWomen-Brief.pdf" target="_blank">Brief</a> · <a href="https://www.sanantonio.gov/Portals/0/Files/health/News/Reports/StatusOfWomen/StatusOfWomen-Full.pdf" target="_blank">Full report</a></em></span>
-      <span class="clip-type">Report · 2019</span>
+      <div class="clip-title"><span class="no-link">"The Status of Women in San Antonio"</span><br><span class="clip-note">with Rogelio Sáenz, Ph.D. · Mayor's Commission on the Status of Women · <a href="https://www.sanantonio.gov/Portals/0/Files/health/News/Reports/StatusOfWomen/StatusOfWomen-Brief.pdf" target="_blank">Brief</a> · <a href="https://www.sanantonio.gov/Portals/0/Files/health/News/Reports/StatusOfWomen/StatusOfWomen-Full.pdf" target="_blank">Full report</a></span></div>
+      <span class="clip-type">Report · May 2019</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/lgcApologies" target="_blank">"The Strength — and Worth — of a Good Apology"</a></span>
-      <span class="clip-type">Essay · 2019</span>
+      <div class="clip-title"><a href="http://bit.ly/lgcApologies" target="_blank">"The Strength — and Worth — of a Good Apology"</a></div>
+      <span class="clip-type">Essay · Mar 2019</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/lgcCreativity" target="_blank">"Is Social Media Killing Our Creativity?"</a></span>
-      <span class="clip-type">Essay · 2019</span>
+      <div class="clip-title"><a href="http://bit.ly/lgcCreativity" target="_blank">"Is Social Media Killing Our Creativity?"</a></div>
+      <span class="clip-type">Essay · Feb 2019</span>
     </div>
 
     <div class="decade-heading">2018</div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/lgcWinter" target="_blank">"In Winter's Depths: The Shortest Days of the Year Offer a Great Opportunity for Reflection"</a></span>
-      <span class="clip-type">Essay · 2018</span>
+      <div class="clip-title"><a href="http://bit.ly/lgcWinter" target="_blank">"In Winter's Depths: The Shortest Days of the Year Offer a Great Opportunity for Reflection"</a></div>
+      <span class="clip-type">Essay · Dec 2018</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/RRWomen" target="_blank">"2018: The Year of Bashing Strong Women in San Antonio"</a></span>
-      <span class="clip-type">Commentary · 2018</span>
+      <div class="clip-title"><a href="http://bit.ly/RRWomen" target="_blank">"2018: The Year of Bashing Strong Women in San Antonio"</a></div>
+      <span class="clip-type">Commentary · Dec 2018</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/SATXWomenVets" target="_blank">"She Served: Women Veterans Are Also a Big Part of Military City, USA"</a></span>
-      <span class="clip-type">Feature · 2018</span>
+      <div class="clip-title"><a href="http://bit.ly/SATXWomenVets" target="_blank">"She Served: Women Veterans Are Also a Big Part of Military City, USA"</a></div>
+      <span class="clip-type">Feature · Nov 2018</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/SATXMilitaryVets" target="_blank">"On the Map: Where Military Veterans Choose to Live in and around San Antonio"</a></span>
-      <span class="clip-type">Feature · 2018</span>
+      <div class="clip-title"><a href="http://bit.ly/SATXMilitaryVets" target="_blank">"On the Map: Where Military Veterans Choose to Live in and around San Antonio"</a></div>
+      <span class="clip-type">Feature · Nov 2018</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/SATXEviction" target="_blank">"Kicked to the Curb: How Eviction Can Make Poverty's Impacts Even Worse"</a></span>
-      <span class="clip-type">Feature · 2018</span>
+      <div class="clip-title"><a href="http://bit.ly/SATXEviction" target="_blank">"Kicked to the Curb: How Eviction Can Make Poverty's Impacts Even Worse"</a></div>
+      <span class="clip-type">Feature · Sep 2018</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/SATXMigration" target="_blank">"Bexar County on the Move — Who's Moving In, Who's Moving Out, and Where"</a></span>
-      <span class="clip-type">Feature · 2018</span>
+      <div class="clip-title"><a href="http://bit.ly/SATXMigration" target="_blank">"Bexar County on the Move — Who's Moving In, Who's Moving Out, and Where"</a></div>
+      <span class="clip-type">Feature · Aug 2018</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/HWVCountry" target="_blank">"Headed for the Country: Women Veterans, Homelessness and Rural America"</a></span>
-      <span class="clip-type">Feature · 2018</span>
+      <div class="clip-title"><a href="http://bit.ly/HWVCountry" target="_blank">"Headed for the Country: Women Veterans, Homelessness and Rural America"</a></div>
+      <span class="clip-type">Feature · Aug 2018</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="https://medium.com/@lilygc/unsung-hero-how-utility-assistance-plays-a-vital-role-in-helping-the-poor-9f3a4d4b6db0" target="_blank">"Unsung Hero: How Utility Assistance Plays a Vital Role in Helping the Poor"</a></span>
-      <span class="clip-type">Feature · 2018</span>
+      <div class="clip-title"><a href="https://medium.com/@lilygc/unsung-hero-how-utility-assistance-plays-a-vital-role-in-helping-the-poor-9f3a4d4b6db0" target="_blank">"Unsung Hero: How Utility Assistance Plays a Vital Role in Helping the Poor"</a></div>
+      <span class="clip-type">Feature · Jul 2018</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/HWVReady" target="_blank">"Is Your State Ready to Accommodate Women Veterans When They Are Homeless?"</a></span>
-      <span class="clip-type">Feature · 2018</span>
+      <div class="clip-title"><a href="http://bit.ly/HWVReady" target="_blank">"Is Your State Ready to Accommodate Women Veterans When They Are Homeless?"</a></div>
+      <span class="clip-type">Feature · Jul 2018</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/HWVPoverty" target="_blank">"Hidden Numbers: Why More Women Veterans May be Homeless Than You Realize"</a></span>
-      <span class="clip-type">Feature · 2018</span>
+      <div class="clip-title"><a href="http://bit.ly/HWVPoverty" target="_blank">"Hidden Numbers: Why More Women Veterans May be Homeless Than You Realize"</a></div>
+      <span class="clip-type">Feature · Jul 2018</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/HWVandIPV" target="_blank">"Keeping Silent: Women Veterans, Intimate Partner Violence and Homelessness"</a></span>
-      <span class="clip-type">Feature · 2018</span>
+      <div class="clip-title"><a href="http://bit.ly/HWVandIPV" target="_blank">"Keeping Silent: Women Veterans, Intimate Partner Violence and Homelessness"</a></div>
+      <span class="clip-type">Feature · Apr 2018</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/SATXChildCare" target="_blank">"What's a Child Care Desert? And Why It Should Matter if You're Living in One"</a></span>
-      <span class="clip-type">Feature · 2018</span>
+      <div class="clip-title"><a href="http://bit.ly/SATXChildCare" target="_blank">"What's a Child Care Desert? And Why It Should Matter if You're Living in One"</a></div>
+      <span class="clip-type">Feature · Mar 2018</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/povertyyardstick" target="_blank">"Measuring Poverty with a Yardstick"</a></span>
-      <span class="clip-type">Feature · 2018</span>
+      <div class="clip-title"><a href="http://bit.ly/povertyyardstick" target="_blank">"Measuring Poverty with a Yardstick"</a></div>
+      <span class="clip-type">Feature · Mar 2018</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/SATXSingleMothers" target="_blank">"Hardship Personified: Single Mothers and Single Mothers of Color"</a></span>
-      <span class="clip-type">Feature · 2018</span>
+      <div class="clip-title"><a href="http://bit.ly/SATXSingleMothers" target="_blank">"Hardship Personified: Single Mothers and Single Mothers of Color"</a></div>
+      <span class="clip-type">Feature · Feb 2018</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/PovtyPyramid" target="_blank">"The Poverty Pyramid: Who's Got it Worst in America?"</a></span>
-      <span class="clip-type">Feature · 2018</span>
+      <div class="clip-title"><a href="http://bit.ly/PovtyPyramid" target="_blank">"The Poverty Pyramid: Who's Got it Worst in America?"</a></div>
+      <span class="clip-type">Feature · Feb 2018</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/SATXBlackHx" target="_blank">"New Film Seeks to Capture, Preserve Black History in Majority-Hispanic San Antonio"</a></span>
-      <span class="clip-type">Feature · 2018</span>
+      <div class="clip-title"><a href="http://bit.ly/SATXBlackHx" target="_blank">"New Film Seeks to Capture, Preserve Black History in Majority-Hispanic San Antonio"</a></div>
+      <span class="clip-type">Feature · Jan 2018</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/HWVNew" target="_blank">"Connecting the Dots: Does Military Sexual Trauma Exacerbate Women Veterans' Experience of Homelessness?"</a></span>
-      <span class="clip-type">Feature · 2018</span>
+      <div class="clip-title"><a href="http://bit.ly/HWVNew" target="_blank">"Connecting the Dots: Does Military Sexual Trauma Exacerbate Women Veterans' Experience of Homelessness?"</a></div>
+      <span class="clip-type">Feature · Jan 2018</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/SATXMobility" target="_blank">"Moving On: Why Poverty Means You Move More, and Why That Matters"</a></span>
-      <span class="clip-type">Feature · 2018</span>
+      <div class="clip-title"><a href="http://bit.ly/SATXMobility" target="_blank">"Moving On: Why Poverty Means You Move More, and Why That Matters"</a></div>
+      <span class="clip-type">Feature · Jan 2018</span>
     </div>
 
     <div class="decade-heading">2017</div>
 
     <div class="clip-item" data-pub="huffpost">
       <span class="clip-pub">HuffPost</span>
-      <span class="clip-title"><a href="http://bit.ly/HPMST" target="_blank">"The Basics of Military Sexual Trauma: A Primer"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/HPMST" target="_blank">"The Basics of Military Sexual Trauma: A Primer"</a></div>
       <span class="clip-type">Feature · Jan 2018</span>
     </div>
 
     <div class="clip-item" data-pub="huffpost">
       <span class="clip-pub">HuffPost</span>
-      <span class="clip-title"><a href="http://bit.ly/HWVSeps" target="_blank">"Leaving the Military Wasn't My Idea: How Separation Status May Affect Homelessness in Women Veterans"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/HWVSeps" target="_blank">"Leaving the Military Wasn't My Idea: How Separation Status May Affect Homelessness in Women Veterans"</a></div>
       <span class="clip-type">Feature · Dec 2017</span>
     </div>
 
     <div class="clip-item" data-pub="huffpost">
       <span class="clip-pub">HuffPost</span>
-      <span class="clip-title"><a href="http://bit.ly/PentRatesHP" target="_blank">"Base Rates: U.S. Military Bases by Rates of Sexual Assault Reports Filed"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/PentRatesHP" target="_blank">"Base Rates: U.S. Military Bases by Rates of Sexual Assault Reports Filed"</a></div>
       <span class="clip-type">Feature · Dec 2017</span>
     </div>
 
     <div class="clip-item" data-pub="expressnews">
       <span class="clip-pub">Express-News</span>
-      <span class="clip-title"><a href="http://bit.ly/ENCook" target="_blank">"Post Office Murals Depict S.A. Role in Texas History"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/ENCook" target="_blank">"Post Office Murals Depict S.A. Role in Texas History"</a></div>
       <span class="clip-type">Feature · Nov 2017</span>
     </div>
 
     <div class="clip-item" data-pub="huffpost">
       <span class="clip-pub">HuffPost</span>
-      <span class="clip-title"><a href="http://bit.ly/FrankLaubach" target="_blank">"Literacy Lives: How Someone You Probably Never Heard of Deserves the Nobel Prize"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/FrankLaubach" target="_blank">"Literacy Lives: How Someone You Probably Never Heard of Deserves the Nobel Prize"</a></div>
       <span class="clip-type">Feature · Oct 2017</span>
     </div>
 
     <div class="clip-item" data-pub="huffpost">
       <span class="clip-pub">HuffPost</span>
-      <span class="clip-title"><a href="http://bit.ly/SATXHP3" target="_blank">"Left Behind: In San Antonio, More Than 100K Lack a Ninth Grade Education"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/SATXHP3" target="_blank">"Left Behind: In San Antonio, More Than 100K Lack a Ninth Grade Education"</a></div>
       <span class="clip-type">Feature · Oct 2017</span>
     </div>
 
     <div class="clip-item" data-pub="huffpost">
       <span class="clip-pub">HuffPost</span>
-      <span class="clip-title"><a href="http://bit.ly/SATXHP2" target="_blank">"San Antonio and the Geography of Poverty"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/SATXHP2" target="_blank">"San Antonio and the Geography of Poverty"</a></div>
       <span class="clip-type">Feature · Oct 2017</span>
     </div>
 
     <div class="clip-item" data-pub="huffpost">
       <span class="clip-pub">HuffPost</span>
-      <span class="clip-title"><a href="http://bit.ly/SATXHP1" target="_blank">"Looking through an Equity Lens at San Antonio"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/SATXHP1" target="_blank">"Looking through an Equity Lens at San Antonio"</a></div>
       <span class="clip-type">Feature · Sep 2017</span>
     </div>
 
     <div class="clip-item" data-pub="expressnews">
       <span class="clip-pub">Express-News</span>
-      <span class="clip-title"><a href="http://bit.ly/lgcEWHarris" target="_blank">"A Force of Nature: Ethel Wilson Harris"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/lgcEWHarris" target="_blank">"A Force of Nature: Ethel Wilson Harris"</a></div>
       <span class="clip-type">Profile · Jun 2017</span>
     </div>
 
     <div class="clip-item" data-pub="huffpost">
       <span class="clip-pub">HuffPost</span>
-      <span class="clip-title"><a href="http://bit.ly/HWVPets" target="_blank">"Don't Leave Fido Behind: Homelessness Impacts Women Veterans and Their Pets"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/HWVPets" target="_blank">"Don't Leave Fido Behind: Homelessness Impacts Women Veterans and Their Pets"</a></div>
       <span class="clip-type">Feature · Jun 2017</span>
     </div>
 
     <div class="clip-item" data-pub="expressnews">
       <span class="clip-pub">Express-News</span>
-      <span class="clip-title"><a href="http://bit.ly/lgcWPA" target="_blank">"Tile Murals on River Walk Are Hidden Treasures Worth Hunting"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/lgcWPA" target="_blank">"Tile Murals on River Walk Are Hidden Treasures Worth Hunting"</a></div>
       <span class="clip-type">Feature · Jun 2017</span>
     </div>
 
     <div class="clip-item" data-pub="huffpost">
       <span class="clip-pub">HuffPost</span>
-      <span class="clip-title"><a href="http://bit.ly/lgcPlanner" target="_blank">"Personal Organizers: Planning for Success"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/lgcPlanner" target="_blank">"Personal Organizers: Planning for Success"</a></div>
       <span class="clip-type">Feature · Jun 2017</span>
     </div>
 
     <div class="clip-item" data-pub="huffpost">
       <span class="clip-pub">HuffPost</span>
-      <span class="clip-title"><a href="http://bit.ly/2qCntwk" target="_blank">"Stress, Burnout, Secondary Trauma, Self-Care and Social Support"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/2qCntwk" target="_blank">"Stress, Burnout, Secondary Trauma, Self-Care and Social Support"</a></div>
       <span class="clip-type">Feature · May 2017</span>
     </div>
 
     <div class="clip-item" data-pub="huffpost">
       <span class="clip-pub">HuffPost</span>
-      <span class="clip-title"><a href="http://bit.ly/HWV7of6" target="_blank">"Homeless Women Veterans Are Veterans with an Important Difference"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/HWV7of6" target="_blank">"Homeless Women Veterans Are Veterans with an Important Difference"</a></div>
       <span class="clip-type">Feature · May 2017</span>
     </div>
 
     <div class="clip-item" data-pub="huffpost">
       <span class="clip-pub">HuffPost</span>
-      <span class="clip-title"><a href="http://bit.ly/HWVSeries" target="_blank">"No Longer Invisible: Women Veterans and Homelessness after Military Service"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/HWVSeries" target="_blank">"No Longer Invisible: Women Veterans and Homelessness after Military Service"</a></div>
       <span class="clip-type">Feature · May 2017</span>
     </div>
 
     <div class="clip-item" data-pub="huffpost">
       <span class="clip-pub">HuffPost</span>
-      <span class="clip-title"><a href="http://bit.ly/HWV5of3" target="_blank">"Homeless Women Veterans Struggle to Be Seen"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/HWV5of3" target="_blank">"Homeless Women Veterans Struggle to Be Seen"</a></div>
       <span class="clip-type">Feature · Apr 2017</span>
     </div>
 
     <div class="clip-item" data-pub="huffpost">
       <span class="clip-pub">HuffPost</span>
-      <span class="clip-title"><a href="http://bit.ly/HWV3of3" target="_blank">"The Path Home for Women Veterans"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/HWV3of3" target="_blank">"The Path Home for Women Veterans"</a></div>
       <span class="clip-type">Feature · Feb 2017</span>
     </div>
 
     <div class="clip-item" data-pub="huffpost">
       <span class="clip-pub">HuffPost</span>
-      <span class="clip-title"><a href="http://bit.ly/HWV4of3" target="_blank">"Camaraderie Offsets Trauma for Women Veterans"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/HWV4of3" target="_blank">"Camaraderie Offsets Trauma for Women Veterans"</a></div>
       <span class="clip-type">Feature · Feb 2017</span>
     </div>
 
     <div class="clip-item" data-pub="huffpost">
       <span class="clip-pub">HuffPost</span>
-      <span class="clip-title"><a href="http://bit.ly/HWV2of3" target="_blank">"Into the Gap: Women Veterans Describe Homelessness"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/HWV2of3" target="_blank">"Into the Gap: Women Veterans Describe Homelessness"</a></div>
       <span class="clip-type">Feature · Feb 2017</span>
     </div>
 
     <div class="clip-item" data-pub="other">
       <span class="clip-pub">Garnet News</span>
-      <span class="clip-title"><a href="http://bit.ly/2kr4aTH" target="_blank">"There's a New Face for Veteran Homelessness, and She's Female"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/2kr4aTH" target="_blank">"There's a New Face for Veteran Homelessness, and She's Female"</a></div>
       <span class="clip-type">Feature · Feb 2017</span>
     </div>
 
     <div class="clip-item" data-pub="huffpost">
       <span class="clip-pub">HuffPost</span>
-      <span class="clip-title"><a href="http://huff.to/2jUz6e1" target="_blank">"GI Jane Needs a Place to Sleep"</a></span>
+      <div class="clip-title"><a href="http://huff.to/2jUz6e1" target="_blank">"GI Jane Needs a Place to Sleep"</a></div>
       <span class="clip-type">Feature · Feb 2017</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/2iSukeT" target="_blank">"Interview with Gen MacManiman: The 5 Keys to Health"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/2iSukeT" target="_blank">"Interview with Gen MacManiman: The 5 Keys to Health"</a></div>
       <span class="clip-type">Interview · Jan 2017</span>
     </div>
 
@@ -599,43 +608,43 @@
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/2fLSDIy" target="_blank">"What I Learned from 250 Hours of Hospice Care"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/2fLSDIy" target="_blank">"What I Learned from 250 Hours of Hospice Care"</a></div>
       <span class="clip-type">Essay · Nov 2016</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/2cfBebK" target="_blank">"Interview with Valerie Cooksley, R.N. on Aromatherapy and Essential Oils"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/2cfBebK" target="_blank">"Interview with Valerie Cooksley, R.N. on Aromatherapy and Essential Oils"</a></div>
       <span class="clip-type">Interview · Sep 2016</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/2bcBJSO" target="_blank">"Sound Health: Music as Medicine for the New Millennium, Part II"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/2bcBJSO" target="_blank">"Sound Health: Music as Medicine for the New Millennium, Part II"</a></div>
       <span class="clip-type">Feature · Aug 2016</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/2b8Pnrm" target="_blank">"Sound Health: Music as Medicine for the New Millennium, Part I"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/2b8Pnrm" target="_blank">"Sound Health: Music as Medicine for the New Millennium, Part I"</a></div>
       <span class="clip-type">Feature · Aug 2016</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/2aSHV6F" target="_blank">"Portrait of a Healing Muse: Eileen Hadidian"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/2aSHV6F" target="_blank">"Portrait of a Healing Muse: Eileen Hadidian"</a></div>
       <span class="clip-type">Profile · Aug 2016</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/2aZORho" target="_blank">"Summer Listening: Did You Miss These Great Podcasts?"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/2aZORho" target="_blank">"Summer Listening: Did You Miss These Great Podcasts?"</a></div>
       <span class="clip-type">Feature · Aug 2016</span>
     </div>
 
     <div class="clip-item" data-pub="medium">
       <span class="clip-pub">Medium</span>
-      <span class="clip-title"><a href="http://bit.ly/VvHealing" target="_blank">"Vietnam Veterans and the 'Hard Work of Healing'"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/VvHealing" target="_blank">"Vietnam Veterans and the 'Hard Work of Healing'"</a></div>
       <span class="clip-type">Feature · Aug 2016</span>
     </div>
 
@@ -643,121 +652,133 @@
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/UTSAWOSL" target="_blank">"Unique UTSA Collection Puts Spotlight on Women at War"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/UTSAWOSL" target="_blank">"Unique UTSA Collection Puts Spotlight on Women at War"</a></div>
       <span class="clip-type">Feature · Nov 2015</span>
     </div>
 
     <div class="clip-item" data-pub="huffpost">
       <span class="clip-pub">HuffPost</span>
-      <span class="clip-title"><a href="http://bit.ly/hwvopencall" target="_blank">"Women Veterans: Ever Been Homeless?"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/hwvopencall" target="_blank">"Women Veterans: Ever Been Homeless?"</a></div>
       <span class="clip-type">Feature · Sep 2015</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/1Jbnzxi" target="_blank">"Into the Breach: Fixing Smiles for Homeless Veterans"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1Jbnzxi" target="_blank">"Into the Breach: Fixing Smiles for Homeless Veterans"</a></div>
       <span class="clip-type">Feature · Aug 2015</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/rryep" target="_blank">"yep Threads: The Right Word for a Righteous Cause"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/rryep" target="_blank">"yep Threads: The Right Word for a Righteous Cause"</a></div>
       <span class="clip-type">Feature · Jun 2015</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/1FjMcRZ" target="_blank">"Lighting Up Dark Fiber: San Antonio's Broadband Plan"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1FjMcRZ" target="_blank">"Lighting Up Dark Fiber: San Antonio's Broadband Plan"</a></div>
       <span class="clip-type">Feature · Jun 2015</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/1QorzKM" target="_blank">"City Leaders Hear Strategies to End Veteran Homelessness"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1QorzKM" target="_blank">"City Leaders Hear Strategies to End Veteran Homelessness"</a></div>
       <span class="clip-type">News · Jun 2015</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/1LKCrBl" target="_blank">"TEDWomen Goes Local Friday Night at Eilan"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1LKCrBl" target="_blank">"TEDWomen Goes Local Friday Night at Eilan"</a></div>
       <span class="clip-type">News · May 2015</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/OpNES" target="_blank">"Operation Never-Ending Stories Honors the Fallen"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/OpNES" target="_blank">"Operation Never-Ending Stories Honors the Fallen"</a></div>
       <span class="clip-type">Feature · May 2015</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/rrklrn" target="_blank">"San Antonio's Veteran Voices: Compelling Stories"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/rrklrn" target="_blank">"San Antonio's Veteran Voices: Compelling Stories"</a></div>
       <span class="clip-type">Feature · May 2015</span>
     </div>
 
     <div class="clip-item" data-pub="huffpost">
       <span class="clip-pub">HuffPost</span>
-      <span class="clip-title"><a href="http://bit.ly/klrnvets" target="_blank">"Veterans: Serving and Healing in Community"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/klrnvets" target="_blank">"Veterans: Serving and Healing in Community"</a></div>
       <span class="clip-type">Feature · May 2015</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/1KUrFZm" target="_blank">"Showtime for Showdown: H-E-B Contest Winners Announced"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1KUrFZm" target="_blank">"Showtime for Showdown: H-E-B Contest Winners Announced"</a></div>
       <span class="clip-type">News · May 2015</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/1Kwz6oJ" target="_blank">"Tonight: Protest at Karnes Civil Detention Center"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1Kwz6oJ" target="_blank">"Tonight: Protest at Karnes Civil Detention Center"</a></div>
       <span class="clip-type">News · Apr 2015</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/sademoday" target="_blank">"Techstars 'Demo Day 2015' Unveils 10 New Cloud Startups"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/sademoday" target="_blank">"Techstars 'Demo Day 2015' Unveils 10 New Cloud Startups"</a></div>
       <span class="clip-type">News · Apr 2015</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/frgarcia" target="_blank">"Father David Garcia: Man on a Mission"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/rrtechstars" target="_blank">"Accelerating Success: Techstars 'Demo Day' This Thursday"</a></div>
+      <span class="clip-type">News · Apr 2015</span>
+    </div>
+
+    <div class="clip-item" data-pub="rivard">
+      <span class="clip-pub">Rivard Report</span>
+      <div class="clip-title"><a href="http://bit.ly/frgarcia" target="_blank">"Father David Garcia: Man on a Mission"</a></div>
       <span class="clip-type">Profile · Apr 2015</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/1ISFerp" target="_blank">"Budget Cuts: San Antonio Gives the Army Something to Think About"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1ISFerp" target="_blank">"Budget Cuts: San Antonio Gives the Army Something to Think About"</a></div>
       <span class="clip-type">News · Apr 2015</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/rrbigsort" target="_blank">"The Big Sort: San Antonio Scores High on Economic Segregation"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/rrbigsort" target="_blank">"The Big Sort: San Antonio Scores High on Economic Segregation"</a></div>
       <span class="clip-type">Feature · Mar 2015</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/DiabetesDoc" target="_blank">"Top Diabetes Doc: Science and Medicine Are Tools for Justice"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/DiabetesDoc" target="_blank">"Top Diabetes Doc: Science and Medicine Are Tools for Justice"</a></div>
       <span class="clip-type">Profile · Feb 2015</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/seatsmart" target="_blank">"Can SeatSmart Change the Secondary Ticket Market?"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/seatsmart" target="_blank">"Can SeatSmart Change the Secondary Ticket Market?"</a></div>
       <span class="clip-type">Feature · Feb 2015</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/1ypajLz" target="_blank">"San Antonio's First WordCamp Draws Cheers"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1ypajLz" target="_blank">"San Antonio's First WordCamp Draws Cheers"</a></div>
       <span class="clip-type">News · Jan 2015</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/1yd1F9g" target="_blank">"Geekdom 2014: Moving, Growing, Geeking"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1GKEAyC" target="_blank">"Warrick Calls for Elimination of Security Alarm Fee"</a></div>
+      <span class="clip-type">News · Jan 2015</span>
+    </div>
+
+    <div class="clip-item" data-pub="rivard">
+      <span class="clip-pub">Rivard Report</span>
+      <div class="clip-title"><a href="http://bit.ly/1yd1F9g" target="_blank">"Geekdom 2014: Moving, Growing, Geeking"</a></div>
       <span class="clip-type">Feature · Jan 2015</span>
     </div>
 
@@ -765,306 +786,546 @@
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/1qQ8JoQ" target="_blank">"Earn-a-Bike Day Two: Along for the Ride"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1qQ8JoQ" target="_blank">"Earn-a-Bike Day Two: Along for the Ride"</a></div>
       <span class="clip-type">Feature · Dec 2014</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/133KoRj" target="_blank">"Kids Build and Earn New Bikes on the Westside"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/133KoRj" target="_blank">"Kids Build and Earn New Bikes on the Westside"</a></div>
       <span class="clip-type">Feature · Dec 2014</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/1tD0icp" target="_blank">"Civil Rights Icon to Speak at the Briscoe"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1tD0icp" target="_blank">"Civil Rights Icon to Speak at the Briscoe"</a></div>
       <span class="clip-type">News · Dec 2014</span>
     </div>
 
     <div class="clip-item" data-pub="other">
       <span class="clip-pub">Texas Tribune</span>
-      <span class="clip-title"><a href="http://bit.ly/1pKBhQq" target="_blank">"The New Face of Veteran Homelessness"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1pKBhQq" target="_blank">"The New Face of Veteran Homelessness"</a></div>
       <span class="clip-type">Feature · Nov 2014</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/1wQVVjV" target="_blank">"Phil Klay's 'Redeployment,' and the Responsibility of Wartime Storytelling"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1wQVVjV" target="_blank">"Phil Klay's 'Redeployment,' and the Responsibility of Wartime Storytelling"</a></div>
       <span class="clip-type">Review · Oct 2014</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/1tmeWbj" target="_blank">"Beyond the Hype, a Reasoned Look at Ebola"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1tmeWbj" target="_blank">"Beyond the Hype, a Reasoned Look at Ebola"</a></div>
       <span class="clip-type">Feature · Oct 2014</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/1BB5AZx" target="_blank">"Try This at Home: ReadyRosie Deployed in San Antonio"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1BB5AZx" target="_blank">"Try This at Home: ReadyRosie Deployed in San Antonio"</a></div>
       <span class="clip-type">Feature · Oct 2014</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/1oolqRx" target="_blank">"Veterans Share Their Stories on Stage at the Tobin"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1oolqRx" target="_blank">"Veterans Share Their Stories on Stage at the Tobin"</a></div>
       <span class="clip-type">Feature · Sep 2014</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/1B8tc7H" target="_blank">"Síclovía: More Than Symbolic Impact on City's Health and Fitness"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1B8tc7H" target="_blank">"Síclovía: More Than Symbolic Impact on City's Health and Fitness"</a></div>
       <span class="clip-type">Feature · Sep 2014</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/1r5GQGg" target="_blank">"Participation Democracy: An Evening with Constitution Café"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1r5GQGg" target="_blank">"Participation Democracy: An Evening with Constitution Café"</a></div>
       <span class="clip-type">Feature · Sep 2014</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/1pituSX" target="_blank">"BiblioTech Turns One amid Festivities and City-County Debate"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1pituSX" target="_blank">"BiblioTech Turns One amid Festivities and City-County Debate"</a></div>
       <span class="clip-type">News · Sep 2014</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/1u2ymlm" target="_blank">"Fotoseptiembre: Focused on the Artist and the Image"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1u2ymlm" target="_blank">"Fotoseptiembre: Focused on the Artist and the Image"</a></div>
       <span class="clip-type">Feature · Sep 2014</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/1qeKz3Q" target="_blank">"The Ice Bucket Challenge in the Age of Social Media"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1qeKz3Q" target="_blank">"The Ice Bucket Challenge in the Age of Social Media"</a></div>
       <span class="clip-type">Feature · Aug 2014</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/1p6pE3w" target="_blank">"San Antonio's New Deal Post Office Murals"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1p6pE3w" target="_blank">"San Antonio's New Deal Post Office Murals"</a></div>
       <span class="clip-type">Feature · Aug 2014</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/1nI3n8T" target="_blank">"The Texas Water Exchange: A Market Emerges"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1nI3n8T" target="_blank">"The Texas Water Exchange: A Market Emerges"</a></div>
       <span class="clip-type">Feature · Jun 2014</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://bit.ly/1kQjV0X" target="_blank">"Poetry, Music Mark Mission Marquee's Official Opening"</a></span>
+      <div class="clip-title"><a href="http://bit.ly/1kQjV0X" target="_blank">"Poetry, Music Mark Mission Marquee's Official Opening"</a></div>
       <span class="clip-type">Feature · Jun 2014</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://therivardreport.com/geeking-cyber-business-pitches-geekdom-hosts-3-day-startup-program-cybersecurity/" target="_blank">"3 Day Startup: Geeking Out on Cybersecurity Pitches"</a></span>
+      <div class="clip-title"><a href="http://therivardreport.com/geeking-cyber-business-pitches-geekdom-hosts-3-day-startup-program-cybersecurity/" target="_blank">"3 Day Startup: Geeking Out on Cybersecurity Pitches"</a></div>
       <span class="clip-type">Feature · May 2014</span>
     </div>
 
     <div class="clip-item" data-pub="rivard">
       <span class="clip-pub">Rivard Report</span>
-      <span class="clip-title"><a href="http://therivardreport.com/san-antonio-need-step-game-compete-cybersecurity-business/" target="_blank">"How San Antonio Can Compete for Cyberbusiness"</a></span>
+      <div class="clip-title"><a href="http://therivardreport.com/san-antonio-need-step-game-compete-cybersecurity-business/" target="_blank">"How San Antonio Can Compete for Cyberbusiness"</a></div>
       <span class="clip-type">Feature · May 2014</span>
     </div>
 
     <div class="clip-item" data-pub="other">
       <span class="clip-pub">US Cybersecurity</span>
-      <span class="clip-title"><span class="no-link">"San Antonio: The Next Hub for Cyber?"</span></span>
+      <div class="clip-title"><a href="http://www.uscybersecurity.net/Pages/welcome.html" target="_blank">"San Antonio: The Next Hub for Cyber?"</a></div>
       <span class="clip-type">Feature · Apr 2014</span>
+    </div>
+
+    <div class="clip-item" data-pub="other">
+      <span class="clip-pub">BreakBulk</span>
+      <div class="clip-title"><span class="no-link">"Path of Change: Emmett's Career, Shipping's Evolution Entwined"</span></div>
+      <span class="clip-type">Feature · Jan/Feb 2015</span>
     </div>
 
     <div class="decade-heading">2013</div>
 
     <div class="clip-item" data-pub="huffpost">
       <span class="clip-pub">HuffPost</span>
-      <span class="clip-title"><a href="http://www.huffingtonpost.com/lily-casura/tis-the-season-for-sensib_b_4477236.html" target="_blank">"'Tis the Season — for Sensible Charitable Giving"</a></span>
+      <div class="clip-title"><a href="http://www.huffingtonpost.com/lily-casura/tis-the-season-for-sensib_b_4477236.html" target="_blank">"'Tis the Season — for Sensible Charitable Giving"</a></div>
       <span class="clip-type">Commentary · Dec 2013</span>
     </div>
 
     <div class="clip-item" data-pub="huffpost">
       <span class="clip-pub">HuffPost</span>
-      <span class="clip-title"><a href="http://www.huffingtonpost.com/lily-casura/dont-leave-military-famil_b_4340573.html" target="_blank">"Don't Leave Military Family Caregivers Out of the Picture"</a></span>
+      <div class="clip-title"><a href="http://www.huffingtonpost.com/lily-casura/dont-leave-military-famil_b_4340573.html" target="_blank">"Don't Leave Military Family Caregivers Out of the Picture"</a></div>
       <span class="clip-type">Commentary · Nov 2013</span>
     </div>
 
     <div class="clip-item" data-pub="other">
       <span class="clip-pub">Houston Chronicle</span>
-      <span class="clip-title"><a href="http://www.chron.com/opinion/outlook/article/Unsung-heroes-military-caregivers-4968645.php" target="_blank">"Unsung Heroes, Military Caregivers"</a></span>
+      <div class="clip-title"><a href="http://www.chron.com/opinion/outlook/article/Unsung-heroes-military-caregivers-4968645.php" target="_blank">"Unsung Heroes, Military Caregivers"</a></div>
       <span class="clip-type">Commentary · Nov 2013</span>
     </div>
 
     <div class="clip-item" data-pub="other">
       <span class="clip-pub">Houston Chronicle</span>
-      <span class="clip-title"><a href="http://www.chron.com/opinion/outlook/article/Casura-Lending-a-hand-often-starts-healing-4843016.php" target="_blank">"Lending a Hand Often Helps Start Healing Process"</a></span>
+      <div class="clip-title"><a href="http://www.chron.com/opinion/outlook/article/Casura-Lending-a-hand-often-starts-healing-4843016.php" target="_blank">"Lending a Hand Often Helps Start Healing Process"</a></div>
       <span class="clip-type">Commentary · Sep 2013</span>
     </div>
 
     <div class="clip-item" data-pub="other">
       <span class="clip-pub">Military Times</span>
-      <span class="clip-title"><a href="http://www.military.com/veterans-report/can-helping-hand-avert-suicide.html" target="_blank">"Can a Helping Hand Avert a Veteran Suicide? I Believe It Can"</a></span>
+      <div class="clip-title"><a href="http://www.military.com/veterans-report/can-helping-hand-avert-suicide.html" target="_blank">"Can a Helping Hand Avert a Veteran Suicide? I Believe It Can"</a></div>
       <span class="clip-type">Commentary · Sep 2013</span>
     </div>
 
     <div class="clip-item" data-pub="other">
       <span class="clip-pub">VA Vantage Point</span>
-      <span class="clip-title"><a href="http://www.blogs.va.gov/VAntage/10222/can-a-helping-hand-avert-a-veteran-suicide-i-believe-it-can/" target="_blank">"Can a Helping Hand Avert a Veteran Suicide? I Believe it Can"</a></span>
+      <div class="clip-title"><a href="http://www.blogs.va.gov/VAntage/10222/can-a-helping-hand-avert-a-veteran-suicide-i-believe-it-can/" target="_blank">"Can a Helping Hand Avert a Veteran Suicide? I Believe it Can"</a></div>
       <span class="clip-type">Commentary · Sep 2013</span>
     </div>
 
     <div class="clip-item" data-pub="other">
       <span class="clip-pub">AFP / AlterNet</span>
-      <span class="clip-title"><a href="http://www.alternet.org/progressive-wire/fort-hood-shooting-suspect-defend-himself-trial" target="_blank">"Fort Hood Shooting Suspect to Defend Himself at Trial"</a></span>
+      <div class="clip-title"><a href="http://www.alternet.org/progressive-wire/fort-hood-shooting-suspect-defend-himself-trial" target="_blank">"Fort Hood Shooting Suspect to Defend Himself at Trial"</a></div>
       <span class="clip-type">Wire · Jun 2013</span>
     </div>
 
     <div class="clip-item" data-pub="other">
       <span class="clip-pub">Adobe Airstream</span>
-      <span class="clip-title"><a href="http://adobeairstream.com/art/michelle-wilmot-the-desert-warrior-practices-art-as-combat-healing/" target="_blank">"Michelle Wilmot, the Desert Warrior, Practices Art as Combat Healing"</a></span>
+      <div class="clip-title"><a href="http://adobeairstream.com/art/michelle-wilmot-the-desert-warrior-practices-art-as-combat-healing/" target="_blank">"Michelle Wilmot, the Desert Warrior, Practices Art as Combat Healing"</a></div>
       <span class="clip-type">Profile · Apr 2013</span>
     </div>
 
     <div class="clip-item" data-pub="other">
       <span class="clip-pub">Fort Worth Weekly</span>
-      <span class="clip-title"><a href="http://www.fwweekly.com/2013/04/03/honoring-their-service/" target="_blank">"Honoring Their Service: In Tarrant County, Military Veterans Find a Strong Safety Net"</a></span>
+      <div class="clip-title"><a href="http://www.fwweekly.com/2013/04/03/honoring-their-service/" target="_blank">"Honoring Their Service: In Tarrant County, Military Veterans Find a Strong Safety Net"</a><br><span class="clip-note">Cover story</span></div>
       <span class="clip-type">Cover Story · Apr 2013</span>
     </div>
 
     <div class="clip-item" data-pub="expressnews">
       <span class="clip-pub">Express-News</span>
-      <span class="clip-title"><a href="http://www.mysanantonio.com/opinion/commentary/article/Where-are-the-male-victims-at-Lackland-4172904.php" target="_blank">"Lackland: Where Are the Male Victims?"</a></span>
+      <div class="clip-title"><a href="http://www.mysanantonio.com/opinion/commentary/article/Where-are-the-male-victims-at-Lackland-4172904.php" target="_blank">"Lackland: Where Are the Male Victims?"</a></div>
       <span class="clip-type">Op-Ed · Jan 2013</span>
     </div>
 
-    <div class="decade-heading">2012 & Earlier</div>
+    <div class="decade-heading">2012</div>
 
     <div class="clip-item" data-pub="expressnews">
       <span class="clip-pub">Express-News</span>
-      <span class="clip-title"><a href="http://www.mysanantonio.com/life/article/Stained-glass-with-heart-and-soul-3551917.php" target="_blank">"Stained Glass with 'Heart and Soul'"</a></span>
+      <div class="clip-title"><a href="http://www.mysanantonio.com/life/article/Stained-glass-with-heart-and-soul-3551917.php" target="_blank">"Stained Glass with 'Heart and Soul'"</a></div>
       <span class="clip-type">Feature · Jun 2012</span>
     </div>
 
-    <div class="clip-item" data-pub="other">
-      <span class="clip-pub">Napa Valley Register</span>
-      <span class="clip-title"><a href="http://napavalleyregister.com/business/neurosurgeon-morgese-takes-leadership-role-at-the-queen/article_81d324ee-7094-11e1-83ad-001871e3ce6c.html" target="_blank">"Neurosurgeon Morgese Takes Leadership Role at Napa's Queen of the Valley Hospital"</a></span>
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">Napa Valley Reg.</span>
+      <div class="clip-title"><a href="http://napavalleyregister.com/business/neurosurgeon-morgese-takes-leadership-role-at-the-queen/article_81d324ee-7094-11e1-83ad-001871e3ce6c.html" target="_blank">"Neurosurgeon Morgese Takes Leadership Role at Napa's Queen of the Valley Hospital"</a></div>
       <span class="clip-type">Profile · Mar 2012</span>
     </div>
 
     <div class="clip-item" data-pub="other">
       <span class="clip-pub">AFP</span>
-      <span class="clip-title"><a href="http://www.rawstory.com/rs/2012/03/14/u-s-opens-kinder-gentler-immigrant-jail/" target="_blank">"U.S. Opens Kinder, Gentler Immigrant Jail"</a></span>
+      <div class="clip-title"><a href="http://www.rawstory.com/rs/2012/03/14/u-s-opens-kinder-gentler-immigrant-jail/" target="_blank">"U.S. Opens Kinder, Gentler Immigrant Jail"</a></div>
       <span class="clip-type">Wire · Mar 2012</span>
     </div>
 
-    <div class="clip-item" data-pub="other">
-      <span class="clip-pub">Napa Valley Register</span>
-      <span class="clip-title"><a href="http://napavalleyregister.com/business/nieves-created-aul-to-make-insurance-easier/article_bcb919ce-f9f2-11e0-8af0-001cc4c03286.html" target="_blank">"Nieves Created AUL to Make Insurance Easier"</a></span>
+    <div class="decade-heading">2011</div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">Napa Valley Reg.</span>
+      <div class="clip-title"><a href="http://napavalleyregister.com/business/nieves-created-aul-to-make-insurance-easier/article_bcb919ce-f9f2-11e0-8af0-001cc4c03286.html" target="_blank">"Nieves Created AUL to Make Insurance Easier"</a></div>
       <span class="clip-type">Profile · Oct 2011</span>
     </div>
 
-    <div class="clip-item" data-pub="other">
-      <span class="clip-pub">Napa Valley Register</span>
-      <span class="clip-title"><a href="http://napavalleyregister.com/lifestyles/food-and-cooking/wine/spit-bucket-wine-accessories-with-a-wink/article_abbf3b58-c2e8-11e0-807a-001cc4c03286.html" target="_blank">"SpitBucket: Wine Accessories with a Wink"</a></span>
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">Napa Valley Reg.</span>
+      <div class="clip-title"><a href="http://napavalleyregister.com/business/d-ultrasound-offers-families-glimpses-of-their-babies-to-be/article_28547382-dc15-11e0-8f8e-001cc4c002e0.html" target="_blank">"4D Ultrasound Offers Families Glimpses of Their Babies-to-Be"</a></div>
+      <span class="clip-type">Profile · Sep 2011</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">Napa Valley Reg.</span>
+      <div class="clip-title"><a href="http://napavalleyregister.com/lifestyles/food-and-cooking/wine/spit-bucket-wine-accessories-with-a-wink/article_abbf3b58-c2e8-11e0-807a-001cc4c03286.html" target="_blank">"SpitBucket: Wine Accessories with a Wink"</a></div>
       <span class="clip-type">Profile · Aug 2011</span>
     </div>
 
-    <div class="clip-item" data-pub="other">
-      <span class="clip-pub">Napa Valley Register</span>
-      <span class="clip-title"><a href="http://napavalleyregister.com/business/advocating-for-napa-s-veterans/article_41f49fcc-2f37-5a74-b6f1-07afd0374af3.html" target="_blank">"Advocating for Napa's Veterans"</a></span>
-      <span class="clip-type">Profile · Nov 2008</span>
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">Napa Valley Reg.</span>
+      <div class="clip-title"><a href="http://napavalleyregister.com/business/medical-surgical-innovations-born-here/article_57e2cce4-ad0c-11e0-a231-001cc4c03286.html" target="_blank">"Medical Surgical Innovations Born Here"</a></div>
+      <span class="clip-type">Profile · Jul 2011</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">Napa Valley Reg.</span>
+      <div class="clip-title"><a href="http://napavalleyregister.com/business/article_99af938c-6022-11e0-abc8-001cc4c03286.html" target="_blank">"Untying the Fine Art of Jewelry Repair and Redesign"</a></div>
+      <span class="clip-type">Profile · Apr 2011</span>
+    </div>
+
+    <div class="decade-heading">2010 & Earlier</div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">Napa Valley Reg.</span>
+      <div class="clip-title"><a href="http://napavalleyregister.com/news/opinion/mailbag/article_c0986f10-ed53-11df-84bf-001cc4c03286.html" target="_blank">"Farmers and Veterans: Outstanding in Their Field"</a></div>
+      <span class="clip-type">Op-Ed · Nov 2010</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">Napa Valley Reg.</span>
+      <div class="clip-title"><a href="http://napavalleyregister.com/news/opinion/mailbag/article_d3e5d7b4-c3ab-11df-b090-001cc4c03286.html" target="_blank">"Combat Trauma Afflicts Women, Men Alike"</a></div>
+      <span class="clip-type">Op-Ed · Oct 2010</span>
     </div>
 
     <div class="clip-item" data-pub="other">
-      <span class="clip-pub">Napa Valley Register</span>
-      <span class="clip-title"><a href="http://www.napavalleyregister.com/articles/2008/10/29/arts/doc4907db81d37f2235338483.txt" target="_blank">"Ambrose Bierce Slept Here? Tracking Down the Upvalley's 'Man of Mystery'"</a></span>
+      <span class="clip-pub">Women's Voices</span>
+      <div class="clip-title"><a href="http://womensvoicesforchange.org/on-memorial-day-exposing-tough-truths-to-prevent-invisible-casualties.htm" target="_blank">"On Memorial Day: Exposing Tough Truths to Prevent Invisible Casualties"</a></div>
+      <span class="clip-type">Commentary · May 2010</span>
+    </div>
+
+    <div class="clip-item" data-pub="other">
+      <span class="clip-pub">Women's Voices</span>
+      <div class="clip-title"><a href="http://womensvoicesforchange.org/100-days-of-internal-fortitude.htm" target="_blank">"100 Days of Internal Fortitude"</a></div>
+      <span class="clip-type">Essay · May 2010</span>
+    </div>
+
+    <div class="clip-item" data-pub="other">
+      <span class="clip-pub">Women's Voices</span>
+      <div class="clip-title"><a href="http://womensvoicesforchange.org/celebrating-turning-18-2.htm" target="_blank">"Celebrating Turning 18"</a></div>
+      <span class="clip-type">Essay · Jan 2010</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">Weekly Calistogan</span>
+      <div class="clip-title"><a href="http://napavalleyregister.com/calistogan/business/heavenly-quaff/article_d8623dca-2a9f-561b-bb2f-584b064b984b.html" target="_blank">"Heavenly Quaff: Observations from 'Champagne Tasting Heaven'"</a></div>
+      <span class="clip-type">Feature · Jan 2010</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">Napa Valley Reg.</span>
+      <div class="clip-title"><a href="http://www.napavalleyregister.com/articles/2010/01/02/home/doc4b3ef3c8412de136169936.txt" target="_blank">"Barreling into Beauty"</a></div>
+      <span class="clip-type">Feature · Jan 2010</span>
+    </div>
+
+    <div class="clip-item" data-pub="other">
+      <span class="clip-pub">Women's Voices</span>
+      <div class="clip-title"><a href="http://womensvoicesforchange.org/in-memory-of-colleen-mussolino-and-other-women-veterans-who-served-and-suffered.htm" target="_blank">"In Memory of Colleen Mussolino, and Other Women Veterans Who Also Served and Suffered"</a></div>
+      <span class="clip-type">Commentary · Oct 2009</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">Napa Valley Reg.</span>
+      <div class="clip-title"><a href="http://www.napavalleyregister.com/articles/2009/10/25/news/local/doc4ae3d1e6b9cc0556901419.txt" target="_blank">"Harvest Havoc, but Cab Coming Through"</a></div>
+      <span class="clip-type">News · Oct 2009</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">St. Helena Star</span>
+      <div class="clip-title"><a href="http://napavalleyregister.com/star/lifestyles/st-helena-is-good-for-your-health/article_a232b4a5-f3cf-5594-83e8-4678bb598160.html" target="_blank">"St. Helena is Good for Your Health"</a></div>
+      <span class="clip-type">Feature · Oct 2009</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">Napa Valley Reg.</span>
+      <div class="clip-title"><a href="http://www.napavalleyregister.com/articles/2009/10/16/wine/doc4ad7d757ece79660329017.txt" target="_blank">"Great Wine and Food Pairings for the Truly Perplexed"</a></div>
+      <span class="clip-type">Feature · Oct 2009</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">Napa Valley Reg.</span>
+      <div class="clip-title"><a href="http://www.napavalleyregister.com/articles/2009/09/12/news/local/doc4aab42ecb41bc474997473.txt" target="_blank">"Remembering 9/11: Two Events Serve to Remind and Educate"</a></div>
+      <span class="clip-type">News · Sep 2009</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">Weekly Calistogan</span>
+      <div class="clip-title"><a href="http://napavalleyregister.com/calistogan/lifestyles/spa-town-usa/article_7abcf966-b931-54e3-8c66-9102b79fbbe4.html" target="_blank">"Spa Town, USA: Calistoga has been a Wellness Destination for Decades"</a></div>
+      <span class="clip-type">Feature · Sep 2009</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">St. Helena Star</span>
+      <div class="clip-title"><a href="http://napavalleyregister.com/star/news/opinion/mailbag/combat-veterans-families-pay-heavy-price/article_5fe979cf-6206-565a-8ff2-f3c7b82a060e.html" target="_blank">"Combat Veterans, Families Pay Heavy Price"</a></div>
+      <span class="clip-type">Op-Ed · Jul 2009</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">Weekly Calistogan</span>
+      <div class="clip-title"><a href="http://napavalleyregister.com/calistogan/news/opinion/columnists/honoring-the-sacrifices-of-veterans-still-needs-work/article_47c9bfe8-9044-5782-9813-07c34dc9187e.html" target="_blank">"Honoring the Sacrifices of Veterans Still Needs Work"</a></div>
+      <span class="clip-type">Op-Ed · Jun 2009</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">St. Helena Star</span>
+      <div class="clip-title"><a href="http://napavalleyregister.com/star/news/local/committee-discusses-trees-at-carnegie-building/article_fbe91121-4e9b-59d8-85fc-ffb156214155.html" target="_blank">"Committee Discusses Trees at Carnegie Building"</a></div>
+      <span class="clip-type">News · May 2009</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">St. Helena Star</span>
+      <div class="clip-title"><a href="http://napavalleyregister.com/star/news/local/backlash-over-tree-cutting-continues/article_a5ea590e-71d2-55da-b416-71a18a1b62af.html" target="_blank">"Backlash over Tree-Cutting Continues"</a></div>
+      <span class="clip-type">News · Apr 2009</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">St. Helena Star</span>
+      <div class="clip-title"><a href="http://napavalleyregister.com/star/lifestyles/saturday-bicycling-event-raises-funds-for-local-nonprofits/article_aa3e7374-3ffd-5277-935d-d92970ecdc7a.html" target="_blank">"Saturday Bicycling Event Raises Funds for Local Nonprofits"</a></div>
+      <span class="clip-type">News · Apr 2009</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">St. Helena Star</span>
+      <div class="clip-title"><a href="http://napavalleyregister.com/star/lifestyles/multicultural-committee-mulls-youth-awareness/article_66c5b66d-a7ae-53ff-b188-e3e41fcceed9.html" target="_blank">"Multicultural Committee Mulls 'Youth Awareness'"</a></div>
+      <span class="clip-type">News · Apr 2009</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">St. Helena Star</span>
+      <div class="clip-title"><a href="http://napavalleyregister.com/star/news/local/how-a-small-community-can-cope-with-great-loss/article_1384bc39-908d-58c3-ada6-50fd43bbc5f3.html" target="_blank">"How a Small Community Can Cope with Great Loss"</a></div>
+      <span class="clip-type">Feature · Apr 2009</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">Weekly Calistogan</span>
+      <div class="clip-title"><a href="http://napavalleyregister.com/calistogan/news/local/a-grief-almost-beyond-understanding/article_ca1c312d-bc88-5b07-8f1d-c92cb7ac3ce2.html" target="_blank">"A Grief Almost Beyond Understanding"</a></div>
+      <span class="clip-type">Feature · Apr 2009</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">Napa Valley Reg.</span>
+      <div class="clip-title"><a href="http://www.napavalleyregister.com/articles/2009/04/03/news/local/doc49d5b05251c45495409017.txt" target="_blank">"How St. Helenans, Others Cope after the Crash that Killed the Jacobsons"</a></div>
+      <span class="clip-type">Feature · Apr 2009</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">St. Helena Star</span>
+      <div class="clip-title"><a href="http://napavalleyregister.com/star/news/local/fifth-graders-spell-their-way-to-success/article_7eb7300c-2456-55ed-816e-68404871ee46.html" target="_blank">"Fifth Graders Spell Their Way to Success"</a></div>
+      <span class="clip-type">News · Mar 2009</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">Weekly Calistogan</span>
+      <div class="clip-title"><a href="http://napavalleyregister.com/calistogan/news/local/spelling-bee-champ-counts-win-on-abacus/article_283da576-759f-5cf8-abda-f85fec6dc77d.html" target="_blank">"Spelling Bee Champ Counts Win on 'Abacus'"</a></div>
+      <span class="clip-type">News · Mar 2009</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">St. Helena Star</span>
+      <div class="clip-title"><a href="http://napavalleyregister.com/star/lifestyles/festive-pioneer-christmas/article_9da0e37d-3b6a-5d54-a36b-51f54c46ecdd.html" target="_blank">"Festive Pioneer Christmas"</a></div>
+      <span class="clip-type">Feature · Dec 2008</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">Napa Valley Reg.</span>
+      <div class="clip-title"><a href="http://www.napavalleyregister.com/articles/2008/11/10/news/local/doc4917d536f048b246262473.txt" target="_blank">"Advocating for Napa's Veterans"</a></div>
+      <span class="clip-type">Profile · Nov 2008</span>
+    </div>
+
+    <div class="clip-item" data-pub="napa">
+      <span class="clip-pub">Napa Valley Reg.</span>
+      <div class="clip-title"><a href="http://www.napavalleyregister.com/articles/2008/10/29/arts/doc4907db81d37f2235338483.txt" target="_blank">"Ambrose Bierce Slept Here? Tracking Down the Upvalley's 'Man of Mystery'"</a></div>
       <span class="clip-type">Feature · Oct 2008</span>
+    </div>
+
+    <div class="decade-heading">Townsend Letter & Earlier (1995–2004)</div>
+
+    <div class="clip-item" data-pub="townsend">
+      <span class="clip-pub">Townsend Letter</span>
+      <div class="clip-title"><a href="http://www.tldp.com/issue/157-8/MadCow.htm" target="_blank">"Mad Cows and Englishmen: Why the Current BSE Epidemic Raises Questions about Foodstuffs and Glandulars"</a><br><span class="clip-note">Cover story</span></div>
+      <span class="clip-type">Feature · May 1996</span>
+    </div>
+
+    <div class="clip-item" data-pub="other">
+      <span class="clip-pub">Common Ground</span>
+      <div class="clip-title"><span class="no-link">"Gentle Medicine: An In-Depth Look at Alternative Medicine's Role in Treatment of Chronic Fatigue Syndrome"</span><br><span class="clip-note">Cover story</span></div>
+      <span class="clip-type">Feature · Nov 1995</span>
+    </div>
+
+    <div class="clip-item" data-pub="townsend">
+      <span class="clip-pub">Townsend Letter</span>
+      <div class="clip-title"><span class="no-link">"Sick of Being Patient": Why Alternative Medicine Offers More Hope in Treating Chronic Fatigue Syndrome</span><br><span class="clip-note">Cover story · Part I of three-part series</span></div>
+      <span class="clip-type">Feature · Jun 1996</span>
+    </div>
+
+    <div class="clip-item" data-pub="townsend">
+      <span class="clip-pub">Townsend Letter</span>
+      <div class="clip-title"><span class="no-link">"Sick of Being Patient": Getting Specific — Alternative Therapies That Work for Chronic Fatigue Syndrome</span><br><span class="clip-note">Part II of three-part series</span></div>
+      <span class="clip-type">Feature · Jul 1996</span>
+    </div>
+
+    <div class="clip-item" data-pub="townsend">
+      <span class="clip-pub">Townsend Letter</span>
+      <div class="clip-title"><span class="no-link">"Sick of Being Patient": The Hard Work of Healing</span><br><span class="clip-note">Part III of three-part series</span></div>
+      <span class="clip-type">Feature · Aug/Sep 1996</span>
+    </div>
+
+    <div class="clip-item" data-pub="townsend">
+      <span class="clip-pub">Townsend Letter</span>
+      <div class="clip-title"><span class="no-link">"Rooting for the Roots": A Conversation with Ralph Moss, Ph.D.</span><br><span class="clip-note">Cover story</span></div>
+      <span class="clip-type">Feature · Jan 1999</span>
+    </div>
+
+    <div class="clip-item" data-pub="townsend">
+      <span class="clip-pub">Townsend Letter</span>
+      <div class="clip-title"><span class="no-link">"Mr. (Medicinal) Mushroom": Interview with Mycologist Paul Stamets</span><br><span class="clip-note">Cover story</span></div>
+      <span class="clip-type">Interview · Jun 1998</span>
+    </div>
+
+    <div class="clip-item" data-pub="townsend">
+      <span class="clip-pub">Townsend Letter</span>
+      <div class="clip-title"><span class="no-link">"Self Health": Alternative Medicine Resources Online</span><br><span class="clip-note">Cover story</span></div>
+      <span class="clip-type">Feature · Oct 1997</span>
+    </div>
+
+    <div class="clip-item" data-pub="townsend">
+      <span class="clip-pub">Townsend Letter</span>
+      <div class="clip-title"><span class="no-link">"Twenty Questions" with Ralph Moss, Ph.D.</span><br><span class="clip-note">Cover story</span></div>
+      <span class="clip-type">Feature · Jan 1998</span>
+    </div>
+
+    <div class="clip-item" data-pub="townsend">
+      <span class="clip-pub">Townsend Letter</span>
+      <div class="clip-title"><span class="no-link">"The Five Most Important Things for Health": Interview with Gen MacManiman</span></div>
+      <span class="clip-type">Interview · Aug/Sep 1997</span>
+    </div>
+
+    <div class="clip-item" data-pub="townsend">
+      <span class="clip-pub">Townsend Letter</span>
+      <div class="clip-title"><span class="no-link">"Lighten Up: Treating the Winter Blues Naturally"</span></div>
+      <span class="clip-type">Feature · Feb/Mar 1999</span>
+    </div>
+
+    <div class="clip-item" data-pub="townsend">
+      <span class="clip-pub">Townsend Letter</span>
+      <div class="clip-title"><span class="no-link">Interview with James S. Gordon, M.D., founder of the Center for Mind-Body Medicine</span></div>
+      <span class="clip-type">Interview · May 1999</span>
+    </div>
+
+    <div class="clip-item" data-pub="townsend">
+      <span class="clip-pub">Townsend Letter</span>
+      <div class="clip-title"><span class="no-link">Interview with Craig Weatherby, author of The Arthritis Bible</span></div>
+      <span class="clip-type">Interview · Aug/Sep 1999</span>
+    </div>
+
+    <div class="clip-item" data-pub="townsend">
+      <span class="clip-pub">Townsend Letter</span>
+      <div class="clip-title"><span class="no-link">"Heck No, We Won't Go!": Baby Boomers Take Aging by Storm</span></div>
+      <span class="clip-type">Feature · Nov/Dec 2000</span>
+    </div>
+
+    <div class="clip-item" data-pub="townsend">
+      <span class="clip-pub">Townsend Letter</span>
+      <div class="clip-title"><span class="no-link">"The (Holistic) Doctor Is In: Seattle Sets National Pace in Alternative Medicine"</span></div>
+      <span class="clip-type">Feature · Feb/Mar 2001</span>
+    </div>
+
+    <div class="clip-item" data-pub="townsend">
+      <span class="clip-pub">Townsend Letter</span>
+      <div class="clip-title"><span class="no-link">"Portrait of a Healing Muse: Eileen Hadidian"</span></div>
+      <span class="clip-type">Profile · Jan 2003</span>
+    </div>
+
+    <div class="clip-item" data-pub="townsend">
+      <span class="clip-pub">Townsend Letter</span>
+      <div class="clip-title"><span class="no-link">"Music as Medicine for the New Millennium, Part I: Joshua Leeds"</span></div>
+      <span class="clip-type">Feature · Oct 2002</span>
+    </div>
+
+    <div class="clip-item" data-pub="townsend">
+      <span class="clip-pub">Townsend Letter</span>
+      <div class="clip-title"><span class="no-link">"Music as Medicine for the New Millennium, Part II: Dr. Arthur Harvey"</span></div>
+      <span class="clip-type">Feature · Nov 2002</span>
+    </div>
+
+    <div class="clip-item" data-pub="townsend">
+      <span class="clip-pub">Townsend Letter</span>
+      <div class="clip-title"><span class="no-link">"Strange Brew: What's Really in Our Drinking Water, Bottled or Otherwise"</span></div>
+      <span class="clip-type">Feature · Aug/Sep 2002</span>
     </div>
 
     <div class="clip-item" data-pub="other">
       <span class="clip-pub">Bar Bulletin</span>
-      <span class="clip-title"><span class="no-link">"New Directions in Technology: Process Engineering vs. Just Doing Things the Way We've Always Done Them"</span></span>
+      <div class="clip-title"><span class="no-link">"New Directions in Technology: Process Engineering vs. Just Doing Things the Way We've Always Done Them"</span></div>
       <span class="clip-type">Feature · Jan 2004</span>
     </div>
 
     <div class="clip-item" data-pub="other">
       <span class="clip-pub">Bar Bulletin</span>
-      <span class="clip-title"><span class="no-link">"Save Your Labor, Save Your Time: Let Document Templates Do the Work for You"</span></span>
+      <div class="clip-title"><span class="no-link">"Save Your Labor, Save Your Time: Let Document Templates Do the Work for You"</span></div>
       <span class="clip-type">Feature · Aug 2003</span>
     </div>
 
     <div class="clip-item" data-pub="other">
       <span class="clip-pub">Bar Bulletin</span>
-      <span class="clip-title"><span class="no-link">"Information Just Wants to be Free: Using FOIA and the Public Disclosure Act"</span></span>
+      <div class="clip-title"><span class="no-link">"Information Just Wants to be Free: Using the Freedom of Information Act and the Public Disclosure Act"</span></div>
       <span class="clip-type">Feature · Jul 2003</span>
     </div>
 
     <div class="clip-item" data-pub="other">
-      <span class="clip-pub">Townsend Letter</span>
-      <span class="clip-title"><span class="no-link">"Portrait of a Healing Muse: Eileen Hadidian"</span></span>
-      <span class="clip-type">Profile · Jan 2003</span>
-    </div>
-
-    <div class="clip-item" data-pub="other">
-      <span class="clip-pub">Townsend Letter</span>
-      <span class="clip-title"><span class="no-link">"Music as Medicine for the New Millennium, Part II: Dr. Arthur Harvey"</span></span>
-      <span class="clip-type">Feature · Nov 2002</span>
-    </div>
-
-    <div class="clip-item" data-pub="other">
-      <span class="clip-pub">Townsend Letter</span>
-      <span class="clip-title"><span class="no-link">"Music as Medicine for the New Millennium, Part I: Joshua Leeds"</span></span>
-      <span class="clip-type">Feature · Oct 2002</span>
-    </div>
-
-    <div class="clip-item" data-pub="other">
-      <span class="clip-pub">Townsend Letter</span>
-      <span class="clip-title"><span class="no-link">"Strange Brew: What's Really in Our Drinking Water, Bottled or Otherwise"</span></span>
-      <span class="clip-type">Feature · Aug 2002</span>
-    </div>
-
-    <div class="clip-item" data-pub="other">
       <span class="clip-pub">Metropolitan Living</span>
-      <span class="clip-title"><span class="no-link">"Jet City Gems: The Many Facets of Seattle's Emerging Jewelry Scene"</span></span>
+      <div class="clip-title"><span class="no-link">"Jet City Gems: The Many Facets of Seattle's Emerging Jewelry Scene"</span></div>
       <span class="clip-type">Feature · Jun 2001</span>
     </div>
 
     <div class="clip-item" data-pub="other">
-      <span class="clip-pub">Townsend Letter</span>
-      <span class="clip-title"><span class="no-link">"The (Holistic) Doctor Is In: Seattle Sets National Pace in Alternative Medicine"</span></span>
-      <span class="clip-type">Feature · Feb 2001</span>
-    </div>
-
-    <div class="clip-item" data-pub="other">
-      <span class="clip-pub">Townsend Letter</span>
-      <span class="clip-title"><span class="no-link">"Heck No, We Won't Go! Baby Boomers Take Aging by Storm"</span></span>
-      <span class="clip-type">Feature · Nov 2000</span>
-    </div>
-
-    <div class="clip-item" data-pub="other">
       <span class="clip-pub">Metropolitan Living</span>
-      <span class="clip-title"><span class="no-link">"Art on the Edge: Defining the Eastside's Arts Scene"</span></span>
+      <div class="clip-title"><span class="no-link">"Art on the Edge: Defining the Eastside's Arts Scene"</span></div>
       <span class="clip-type">Feature · Jun 2000</span>
-    </div>
-
-    <div class="clip-item" data-pub="other">
-      <span class="clip-pub">Townsend Letter</span>
-      <span class="clip-title"><span class="no-link">"Rooting for the Roots: Conversation with Ralph Moss, Ph.D."</span> <em style="font-size:0.85rem;color:var(--mid)">Cover story</em></span>
-      <span class="clip-type">Feature · Jan 1999</span>
-    </div>
-
-    <div class="clip-item" data-pub="other">
-      <span class="clip-pub">Townsend Letter</span>
-      <span class="clip-title"><span class="no-link">"Gentle Medicine: Treating Chronic Fatigue Syndrome Successfully with Natural Medicine"</span> <em style="font-size:0.85rem;color:var(--mid)">Cover story</em></span>
-      <span class="clip-type">Feature · Jun 1996</span>
-    </div>
-
-    <div class="clip-item" data-pub="other">
-      <span class="clip-pub">Common Ground</span>
-      <span class="clip-title"><span class="no-link">"Gentle Medicine: An In-Depth Look at Alternative Medicine's Role in Treatment of Chronic Fatigue Syndrome"</span> <em style="font-size:0.85rem;color:var(--mid)">Cover story</em></span>
-      <span class="clip-type">Feature · Nov 1995</span>
     </div>
 
   </div>
@@ -1078,13 +1339,8 @@
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       document.querySelectorAll('.clip-item').forEach(item => {
-        if (pub === 'all' || item.dataset.pub === pub) {
-          item.style.display = 'grid';
-        } else {
-          item.style.display = 'none';
-        }
+        item.style.display = (pub === 'all' || item.dataset.pub === pub) ? 'grid' : 'none';
       });
-      // Hide decade headings with no visible items
       document.querySelectorAll('.decade-heading').forEach(heading => {
         let next = heading.nextElementSibling;
         let hasVisible = false;
