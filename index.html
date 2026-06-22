@@ -6,16 +6,16 @@
   <title>Lily Casura, MSW — Public Scholar</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink:       #1a1a1a;
+      --ink:       #1e3a2f;
       --paper:     #f7f4ef;
       --mist:      #e8e3da;
-      --sage:      #5c7a6b;
-      --sage-light:#e4ede8;
-      --rust:      #8b4a2f;
-      --mid:       #6b6560;
+      --sage:      #2d5a3d;
+      --sage-light:#ddeae3;
+      --rust:      #2d5a3d;
+      --mid:       #4a6b5a;
       --white:     #ffffff;
     }
 
@@ -25,9 +25,9 @@
     body {
       background: var(--paper);
       color: var(--ink);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      font-size: 17px;
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: 18px;
       line-height: 1.7;
     }
 
@@ -46,7 +46,7 @@
     }
 
     .nav-name {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: Georgia, serif;
       font-size: 1.15rem;
       font-weight: 600;
       letter-spacing: 0.02em;
@@ -91,13 +91,20 @@
       padding: 5rem 4rem 5rem 5rem;
     }
 
+    .hero-photo-name {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
     .hero-photo {
-      width: 150px;
-      height: 150px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
       object-position: center 15%;
-      margin-bottom: 2rem;
+      flex-shrink: 0;
       border: 3px solid var(--mist);
     }
 
@@ -111,7 +118,7 @@
     }
 
     .hero-name {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: Georgia, serif;
       font-size: clamp(3rem, 5vw, 5rem);
       font-weight: 600;
       line-height: 1.05;
@@ -119,10 +126,9 @@
     }
 
     .hero-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.3rem, 2vw, 1.7rem);
-      font-weight: 400;
-      font-style: italic;
+      font-family: Georgia, serif;
+      font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+      line-height: 1.25;
       color: var(--rust);
       margin-bottom: 2.5rem;
     }
@@ -166,7 +172,7 @@
     .stat-block { border-left: 2px solid var(--sage); padding-left: 1.5rem; }
 
     .stat-number {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: Georgia, serif;
       font-size: clamp(2.5rem, 4vw, 3.8rem);
       font-weight: 600;
       line-height: 1;
@@ -186,7 +192,7 @@
       color: var(--mid);
       margin-top: 0.25rem;
       font-style: italic;
-      font-family: 'Cormorant Garamond', serif;
+      font-family: Georgia, serif;
     }
 
     /* ── SECTION BASE ── */
@@ -202,7 +208,7 @@
     }
 
     .section-heading {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: Georgia, serif;
       font-size: clamp(1.8rem, 3vw, 2.8rem);
       font-weight: 600;
       line-height: 1.15;
@@ -234,7 +240,7 @@
     .area-icon { font-size: 1.5rem; margin-bottom: 1rem; }
 
     .area-name {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: Georgia, serif;
       font-size: 1.3rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
@@ -277,7 +283,7 @@
     }
 
     .highlight-text em {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: Georgia, serif;
       font-style: italic;
       color: var(--mid);
     }
@@ -311,7 +317,7 @@
 
     .contact-email {
       display: inline-block;
-      font-family: 'Cormorant Garamond', serif;
+      font-family: Georgia, serif;
       font-size: 1.4rem;
       font-style: italic;
       color: var(--ink);
@@ -372,12 +378,14 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-text">
-      <img class="hero-photo" src="lily-casura.jpg" alt="Lily Casura">
-      <p class="hero-eyebrow">Public Scholar · San Antonio, Texas</p>
-      <h1 class="hero-name">Lily<br>Casura</h1>
-      <p class="hero-title">MSW — Research, Journalism & Data</p>
+      <div class="hero-photo-name">
+        <img class="hero-photo" src="lily-casura.jpg" alt="Lily Casura">
+        <h1 class="hero-name">Lily<br>Casura</h1>
+      </div>
+      <p class="hero-eyebrow">Public Scholar</p>
+      <p class="hero-title"><strong>Public Scholar</strong><br><em>Research, Journalism & Data</em></p>
       <div class="hero-bio">
-        <p>Lily Casura is a public scholar whose work sits at the intersection of research, journalism, and data. She investigates the issues that shape vulnerable communities — women veterans experiencing homelessness, domestic violence, poverty, wage equity, and the demographics of inequality — and translates that work into forms that reach both academic audiences and the general public.</p>
+        <p>Lily Casura, MSW is a public scholar whose work sits at the intersection of research, journalism, and data. She investigates the issues that shape vulnerable communities — women veterans experiencing homelessness, domestic violence, poverty, wage equity, and the demographics of inequality — and translates that work into forms that reach both academic audiences and the general public.</p>
         <p>Her journalism has appeared in <em>The Huffington Post</em>, <em>The Texas Tribune</em>, the <em>San Antonio Express-News</em>, <em>The Rivard Report</em>, and elsewhere. Her academic work has been published in the <em>Journal of Military, Veteran and Family Health</em> and in edited volumes from Oxford University Press and Springer Nature.</p>
         <p>She is a Harvard graduate, holds a Master's in Social Work from UT San Antonio, and is an inaugural grantee of the International Women's Media Foundation's Howard G. Buffett Fund for Women Journalists.</p>
       </div>
