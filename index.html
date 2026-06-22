@@ -61,6 +61,10 @@
     }
 
     .nav-links a {
+      border: 1px solid var(--mist);
+      padding: 0.3rem 0.7rem;
+      border-radius: 2px;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
       font-size: 0.75rem;
       font-weight: 400;
       letter-spacing: 0.08em;
@@ -136,7 +140,7 @@
     .hero-cta {
       display: inline-block;
       background: var(--sage);
-      color: var(--white);
+      color: var(--ink);
       text-decoration: none;
       padding: 0.75rem 2rem;
       font-size: 0.82rem;
@@ -150,8 +154,8 @@
     .hero-cta:hover { background: var(--rust); }
 
     .hero-stats {
-      background: var(--ink);
-      color: var(--white);
+      background: var(--white);
+      color: var(--ink);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -166,20 +170,20 @@
       font-size: clamp(2.5rem, 4vw, 3.8rem);
       font-weight: 600;
       line-height: 1;
-      color: var(--white);
+      color: var(--ink);
     }
 
     .stat-label {
       font-size: 0.78rem;
       font-weight: 400;
       letter-spacing: 0.06em;
-      color: #a09a94;
+      color: var(--mid);
       margin-top: 0.3rem;
     }
 
     .stat-detail {
       font-size: 0.85rem;
-      color: #c5bfb9;
+      color: var(--mid);
       margin-top: 0.25rem;
       font-style: italic;
       font-family: 'Cormorant Garamond', serif;
@@ -289,8 +293,8 @@
 
     /* ── CONTACT ── */
     .contact {
-      background: var(--ink);
-      color: var(--white);
+      background: var(--white);
+      color: var(--ink);
       text-align: center;
       padding: 6rem 5rem;
     }
@@ -299,7 +303,7 @@
     .contact .section-heading { color: var(--white); margin-bottom: 1rem; }
 
     .contact-sub {
-      color: #a09a94;
+      color: var(--mid);
       font-size: 0.95rem;
       max-width: 480px;
       margin: 0 auto 2.5rem;
@@ -310,7 +314,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.4rem;
       font-style: italic;
-      color: var(--white);
+      color: var(--ink);
       text-decoration: none;
       border-bottom: 1px solid var(--sage);
       padding-bottom: 2px;
@@ -357,7 +361,7 @@
       <li><a href="data.html">Data Mastery</a></li>
       <li><a href="journalism.html">Journalism</a></li>
       <li><a href="ai.html">AI & Consulting</a></li>
-      <li><a href="service.html">Service</a></li>
+      <li><a href="projects.html">Projects</a></li>
       <li><a href="grants.html">Grants & Recognition</a></li>
       <li><a href="speaking.html">Speaking</a></li>
       <li><a href="in-their-words.html">In Their Words</a></li>
@@ -429,7 +433,7 @@
         <div class="area-name">AI & Consulting</div>
         <p class="area-desc">Exploring the intersection of AI tools and nonprofit work, with Anthropic certifications in Claude and AI for Nonprofits.</p>
       </a>
-      <a class="area-card" href="service.html">
+      <a class="area-card" href="projects.html">
         <div class="area-icon">🛠️</div>
         <div class="area-name">Service & Outreach</div>
         <p class="area-desc">Community tools built from scratch — online directories, resource hubs, and civic groups serving thousands during times of need.</p>
