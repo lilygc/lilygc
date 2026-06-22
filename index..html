@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lily Casura, MSW — Public Scholar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:       #1e3a2f;
+      --paper:     #f7f4ef;
+      --mist:      #e8e3da;
+      --sage:      #2d5a3d;
+      --sage-light:#ddeae3;
+      --rust:      #2d5a3d;
+      --mid:       #4a6b5a;
+      --white:     #ffffff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--paper);
+      border-bottom: 1px solid var(--mist);
+      padding: 0 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .nav-name {
+      font-family: Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.6rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      border: 1px solid var(--mist);
+      padding: 0.3rem 0.7rem;
+      border-radius: 2px;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--sage); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 60px;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 4rem 5rem 5rem;
+    }
+
+    .hero-photo-name {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 15%;
+      flex-shrink: 0;
+      border: 3px solid var(--mist);
+    }
+
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-name {
+      font-family: Georgia, serif;
+      font-size: clamp(3rem, 5vw, 5rem);
+      font-weight: 600;
+      line-height: 1.05;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-title {
+      font-family: Georgia, serif;
+      font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+      line-height: 1.25;
+      color: var(--rust);
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-bio {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #3a3735;
+      max-width: 520px;
+      margin-bottom: 3rem;
+    }
+
+    .hero-bio p + p { margin-top: 1rem; }
+
+    .hero-cta {
+      display: inline-block;
+      background: var(--sage);
+      color: var(--ink);
+      text-decoration: none;
+      padding: 0.75rem 2rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: background 0.2s;
+      align-self: flex-start;
+    }
+
+    .hero-cta:hover { background: var(--rust); }
+
+    .hero-stats {
+      background: var(--white);
+      color: var(--ink);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 4rem;
+      gap: 3rem;
+    }
+
+    .stat-block { border-left: 2px solid var(--sage); padding-left: 1.5rem; }
+
+    .stat-number {
+      font-family: Georgia, serif;
+      font-size: clamp(2.5rem, 4vw, 3.8rem);
+      font-weight: 600;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--mid);
+      margin-top: 0.3rem;
+    }
+
+    .stat-detail {
+      font-size: 0.85rem;
+      color: var(--mid);
+      margin-top: 0.25rem;
+      font-style: italic;
+      font-family: Georgia, serif;
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 5rem 5rem; }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-heading {
+      font-family: Georgia, serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── AREAS ── */
+    .areas { background: var(--white); }
+
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1px;
+      background: var(--mist);
+      border: 1px solid var(--mist);
+    }
+
+    .area-card {
+      background: var(--white);
+      padding: 2rem 2rem 2.5rem;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: background 0.2s;
+    }
+
+    .area-card:hover { background: var(--sage-light); }
+
+    .area-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+
+    .area-name {
+      font-family: Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .area-desc {
+      font-size: 0.85rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    /* ── HIGHLIGHTS ── */
+    .highlights { background: var(--paper); }
+
+    .highlight-list {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--mist);
+    }
+
+    .highlight-item {
+      display: grid;
+      grid-template-columns: 160px 1fr auto;
+      gap: 2rem;
+      align-items: baseline;
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--mist);
+    }
+
+    .highlight-year {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--mid);
+      letter-spacing: 0.05em;
+    }
+
+    .highlight-text {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .highlight-text em {
+      font-family: Georgia, serif;
+      font-style: italic;
+      color: var(--mid);
+    }
+
+    .highlight-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rust);
+      white-space: nowrap;
+    }
+
+    /* ── CONTACT ── */
+    .contact {
+      background: var(--white);
+      color: var(--ink);
+      text-align: center;
+      padding: 6rem 5rem;
+    }
+
+    .contact .section-label { color: var(--sage); }
+    .contact .section-heading { color: var(--white); margin-bottom: 1rem; }
+
+    .contact-sub {
+      color: var(--mid);
+      font-size: 0.95rem;
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .contact-email {
+      display: inline-block;
+      font-family: Georgia, serif;
+      font-size: 1.4rem;
+      font-style: italic;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--sage);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .contact-email:hover { color: var(--sage); border-color: var(--rust); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #111;
+      color: #555;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-text { padding: 4rem 2rem 3rem; }
+      .hero-stats {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 3rem 2rem;
+        gap: 2rem;
+      }
+      .nav-links { display: none; }
+      section { padding: 3.5rem 2rem; }
+      .highlight-item { grid-template-columns: 100px 1fr; }
+      .highlight-tag { display: none; }
+      .contact { padding: 4rem 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-name" href="index.html">Lily Casura, MSW</a>
+    <ul class="nav-links">
+      <li><a href="research.html">Research</a></li>
+      <li><a href="data.html">Data Mastery</a></li>
+      <li><a href="journalism.html">Journalism</a></li>
+      <li><a href="ai.html">Consulting & AI</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="grants.html">Grants & Recognition</a></li>
+      <li><a href="speaking.html">Speaking</a></li>
+      <li><a href="in-their-words.html">In Their Words</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-photo-name">
+        <h1 class="hero-name">Lily<br>Casura</h1>
+        <img class="hero-photo" src="lily-casura.jpg" alt="Lily Casura">
+      </div>
+      <p class="hero-eyebrow">Public Scholar</p>
+      <p class="hero-title"><strong>Public Scholar</strong><br><em>Research, Journalism & Data</em></p>
+      <div class="hero-bio">
+        <p>Lily Casura, MSW is a public scholar whose work sits at the intersection of research, journalism, and data. She investigates the issues that shape vulnerable communities — women veterans experiencing homelessness, domestic violence, poverty, wage equity, and the demographics of inequality — and translates that work into forms that reach both academic audiences and the general public.</p>
+        <p>Her journalism has appeared in <em>The Huffington Post</em>, <em>The Texas Tribune</em>, the <em>San Antonio Express-News</em>, <em>The Rivard Report</em>, and elsewhere. Her academic work has been published in the <em>Journal of Military, Veteran and Family Health</em> and in edited volumes from Oxford University Press and Springer Nature.</p>
+        <p>She is a Harvard honors graduate, holds a Master's in Social Work from UT San Antonio, and is an inaugural grantee of the International Women's Media Foundation's Howard G. Buffett Fund for Women Journalists.</p>
+      </div>
+
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-block">
+        <div class="stat-number">150+</div>
+        <div class="stat-label">Journalism clips</div>
+        <div class="stat-detail">HuffPost · Texas Tribune · Express-News · Rivard Report</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Academic book chapters</div>
+        <div class="stat-detail">Oxford University Press · Springer Nature · Routledge</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">~$300K</div>
+        <div class="stat-label">In research grants received</div>
+        <div class="stat-detail">IWMF · Metro Health · City of San Antonio</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">TEDx</div>
+        <div class="stat-label">San Antonio, 2019</div>
+        <div class="stat-detail">Coming Out of the Shadows: Women Veterans & Homelessness</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREAS -->
+  <section class="areas">
+    <p class="section-label">What I do</p>
+    <h2 class="section-heading">Areas of Work</h2>
+    <div class="areas-grid">
+      <a class="area-card" href="research.html">
+        <div class="area-icon">🔬</div>
+        <div class="area-name">Research</div>
+        <p class="area-desc">Survey research, community-wide studies, and peer-reviewed publications — with a specialty in vulnerable populations and policy implications.</p>
+      </a>
+      <a class="area-card" href="data.html">
+        <div class="area-icon">📊</div>
+        <div class="area-name">Data Mastery</div>
+        <p class="area-desc">Demographic analysis, data visualization, and mapping — including a Tableau Public Viz of the Day award.</p>
+      </a>
+      <a class="area-card" href="journalism.html">
+        <div class="area-icon">✒️</div>
+        <div class="area-name">Journalism</div>
+        <p class="area-desc">150+ articles, commentaries, and features across national and local outlets — making complex data legible to general audiences.</p>
+      </a>
+      <a class="area-card" href="ai.html">
+        <div class="area-icon">🤖</div>
+        <div class="area-name">Consulting & AI</div>
+        <p class="area-desc">Exploring the intersection of AI tools and nonprofit work, with Anthropic certifications in Claude and AI for Nonprofits.</p>
+      </a>
+      <a class="area-card" href="projects.html">
+        <div class="area-icon">🛠️</div>
+        <div class="area-name">Projects</div>
+        <p class="area-desc">Community tools built from scratch — online directories, resource hubs, and civic groups serving thousands during times of need.</p>
+      </a>
+      <a class="area-card" href="grants.html">
+        <div class="area-icon">🏆</div>
+        <div class="area-name">Grants & Recognition</div>
+        <p class="area-desc">National awards, research grants totaling ~$300K, and media recognition — including the IWMF's Howard G. Buffett Fund.</p>
+      </a>
+      <a class="area-card" href="speaking.html">
+        <div class="area-icon">🎙️</div>
+        <div class="area-name">Speaking</div>
+        <p class="area-desc">Keynotes, conference presentations, and panels at national venues — including TEDx San Antonio and the American Public Health Association.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- SELECTED HIGHLIGHTS -->
+  <section class="highlights">
+    <p class="section-label">Selected highlights</p>
+    <h2 class="section-heading">A Few Things Worth Noting</h2>
+    <div class="highlight-list">
+      <div class="highlight-item">
+        <span class="highlight-year">2026</span>
+        <span class="highlight-text">Peer-reviewed article in <em>Journal of Military, Veteran and Family Health</em> on aging women veterans, MST, PTSD and homelessness</span>
+        <span class="highlight-tag">Research</span>
+      </div>
+      <div class="highlight-item">
+        <span class="highlight-year">2025</span>
+        <span class="highlight-text">Book chapter in <em>International Handbook of the Demography of Poverty and Inequality</em>, Springer Nature</span>
+        <span class="highlight-tag">Academic</span>
+      </div>
+      <div class="highlight-item">
+        <span class="highlight-year">2024</span>
+        <span class="highlight-text">Book chapter in <em>The Oxford Handbook of Sociology for Social Justice</em>, Oxford University Press</span>
+        <span class="highlight-tag">Academic</span>
+      </div>
+      <div class="highlight-item">
+        <span class="highlight-year">2019</span>
+        <span class="highlight-text">TEDx San Antonio — "Coming Out of the Shadows: Women Veterans and Homelessness after Military Service"</span>
+        <span class="highlight-tag">Speaking</span>
+      </div>
+      <div class="highlight-item">
+        <span class="highlight-year">2017</span>
+        <span class="highlight-text">American Public Health Association annual conference, Atlanta — "Coming Out of the Shadows: Women Veterans and Homelessness after Military Service"</span>
+        <span class="highlight-tag">Speaking</span>
+      </div>
+      <div class="highlight-item">
+        <span class="highlight-year">2017</span>
+        <span class="highlight-text">Tableau Public "Data Viz of the Day" for San Antonio Population Characteristics by ZIP Code</span>
+        <span class="highlight-tag">Data</span>
+      </div>
+      <div class="highlight-item">
+        <span class="highlight-year">2015</span>
+        <span class="highlight-text">Inaugural grantee, IWMF Howard G. Buffett Fund for Women Journalists — $19,500 for multimedia reporting on women veteran homelessness</span>
+        <span class="highlight-tag">Grant</span>
+      </div>
+      <div class="highlight-item">
+        <span class="highlight-year">2014</span>
+        <span class="highlight-text">"The New Face of Veteran Homelessness" — <em>The Texas Tribune</em></span>
+        <span class="highlight-tag">Journalism</span>
+      </div>
+      <div class="highlight-item">
+        <span class="highlight-year">2013</span>
+        <span class="highlight-text">Panelist, Warrior and Family Symposium, Military Officers Association of America, Washington, D.C.</span>
+        <span class="highlight-tag">Speaking</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <p class="section-label">Get in touch</p>
+    <h2 class="section-heading">Let's Talk</h2>
+    <p class="contact-sub">For research collaborations, consulting, speaking inquiries, or press.</p>
+    <a class="contact-email" href="mailto:lily@lilygc.com">lily@lilygc.com</a>
+  </section>
+
+  <footer>
+    &copy; 2026 Lily Casura, MSW &nbsp;·&nbsp; lilygc.com
+  </footer>
+
+</body>
+</html>
