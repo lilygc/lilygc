@@ -36,13 +36,21 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: var(--paper);
-      border-bottom: 1px solid var(--mist);
+      background-image: url('nav-bg.jpg');
+      background-size: cover;
+      background-position: center 40%;
       padding: 0 2.5rem;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      height: 60px;
+      justify-content: flex-end;
+      height: 48px;
+    }
+
+    nav::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 30, 15, 0.55);
     }
 
     .nav-name {
@@ -50,38 +58,50 @@
       font-size: 1.15rem;
       font-weight: 600;
       letter-spacing: 0.02em;
-      color: var(--ink);
+      color: rgba(255,255,255,0.85);
       text-decoration: none;
+      position: relative;
+      z-index: 1;
     }
 
     .nav-links {
       display: flex;
-      gap: 1.6rem;
+      gap: 0.5rem;
       list-style: none;
+      position: relative;
+      z-index: 1;
     }
 
     .nav-links a {
-      border: 1px solid var(--mist);
-      padding: 0.3rem 0.7rem;
+      font-family: Georgia, serif;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 0.25rem 0.65rem;
       border-radius: 2px;
       transition: color 0.2s, border-color 0.2s, background 0.2s;
-      font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--mid);
-      text-decoration: none;
-      transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--sage); }
+    .nav-links a:hover {
+      color: #ffffff;
+      border-color: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.15);
+    }
+
+    .nav-links a.active {
+      color: #ffffff;
+      border-color: rgba(255,255,255,0.6);
+    }
 
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
       display: grid;
       grid-template-columns: 2fr 1fr;
-      padding-top: 60px;
+      padding-top: 48px;
     }
 
     .hero-text {
@@ -371,7 +391,6 @@
         <h1 class="hero-name">Lily<br>Casura</h1>
         <img class="hero-photo" src="lily-casura.jpg" alt="Lily Casura">
       </div>
-      <p class="hero-eyebrow">Public Scholar</p>
       <p class="hero-title"><strong>Public Scholar</strong><br><em>Research, Journalism & Data</em></p>
       <div class="hero-bio">
         <p>Lily Casura, MSW is a public scholar whose work sits at the intersection of research, journalism, and data. She investigates the issues that shape vulnerable communities — women veterans experiencing homelessness, domestic violence, poverty, wage equity, and the demographics of inequality — and translates that work into forms that reach both academic audiences and the general public.</p>
