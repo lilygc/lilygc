@@ -36,13 +36,12 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: var(--paper);
-      border-bottom: 1px solid var(--mist);
+      background: #3a6b4a;
       padding: 0 2.5rem;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      height: 60px;
+      justify-content: flex-end;
+      height: 48px;
     }
 
     .nav-name {
@@ -50,38 +49,50 @@
       font-size: 1.15rem;
       font-weight: 600;
       letter-spacing: 0.02em;
-      color: var(--ink);
+      color: rgba(255,255,255,0.85);
       text-decoration: none;
+      position: relative;
+      z-index: 1;
     }
 
     .nav-links {
       display: flex;
-      gap: 1.6rem;
+      gap: 0.5rem;
       list-style: none;
+      position: relative;
+      z-index: 1;
     }
 
     .nav-links a {
-      border: 1px solid var(--mist);
-      padding: 0.3rem 0.7rem;
+      font-family: Georgia, serif;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 0.25rem 0.65rem;
       border-radius: 2px;
       transition: color 0.2s, border-color 0.2s, background 0.2s;
-      font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--mid);
-      text-decoration: none;
-      transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--sage); }
+    .nav-links a:hover {
+      color: #ffffff;
+      border-color: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.15);
+    }
+
+    .nav-links a.active {
+      color: #ffffff;
+      border-color: rgba(255,255,255,0.6);
+    }
 
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding-top: 60px;
+      grid-template-columns: 2fr 1fr;
+      padding-top: 48px;
     }
 
     .hero-text {
@@ -165,15 +176,16 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 5rem 4rem;
-      gap: 3rem;
+      padding: 3rem 2rem;
+      gap: 2rem;
+      border-left: 1px solid var(--mist);
     }
 
-    .stat-block { border-left: 2px solid var(--sage); padding-left: 1.5rem; }
+    .stat-block { border-left: 2px solid var(--sage); padding-left: 1rem; }
 
     .stat-number {
       font-family: Georgia, serif;
-      font-size: clamp(2.5rem, 4vw, 3.8rem);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
       font-weight: 600;
       line-height: 1;
       color: var(--ink);
@@ -188,7 +200,7 @@
     }
 
     .stat-detail {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--mid);
       margin-top: 0.25rem;
       font-style: italic;
@@ -219,37 +231,26 @@
     .areas { background: var(--white); }
 
     .areas-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1px;
-      background: var(--mist);
-      border: 1px solid var(--mist);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
     }
 
-    .area-card {
-      background: var(--white);
-      padding: 2rem 2rem 2.5rem;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-      transition: background 0.2s;
-    }
-
-    .area-card:hover { background: var(--sage-light); }
-
-    .area-icon { font-size: 1.5rem; margin-bottom: 1rem; }
-
-    .area-name {
+    .area-btn {
       font-family: Georgia, serif;
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      color: var(--ink);
+      text-decoration: none;
+      border: 1px solid var(--mist);
+      padding: 0.55rem 1.25rem;
+      border-radius: 2px;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
     }
 
-    .area-desc {
-      font-size: 0.85rem;
-      color: var(--mid);
-      line-height: 1.6;
+    .area-btn:hover {
+      background: var(--sage-light);
+      border-color: var(--sage);
+      color: var(--sage);
     }
 
     /* ── HIGHLIGHTS ── */
@@ -266,7 +267,7 @@
       grid-template-columns: 160px 1fr auto;
       gap: 2rem;
       align-items: baseline;
-      padding: 1.4rem 0;
+      padding: 0.6rem 0;
       border-bottom: 1px solid var(--mist);
     }
 
@@ -302,7 +303,7 @@
       background: var(--white);
       color: var(--ink);
       text-align: center;
-      padding: 6rem 5rem;
+      padding: 2.5rem 5rem;
     }
 
     .contact .section-label { color: var(--sage); }
@@ -320,19 +321,19 @@
       font-family: Georgia, serif;
       font-size: 1.4rem;
       font-style: italic;
-      color: var(--ink);
+      color: #3a6b4a;
       text-decoration: none;
-      border-bottom: 1px solid var(--sage);
+      border-bottom: 1px solid #3a6b4a;
       padding-bottom: 2px;
       transition: color 0.2s, border-color 0.2s;
     }
 
-    .contact-email:hover { color: var(--sage); border-color: var(--rust); }
+    .contact-email:hover { color: var(--ink); border-color: var(--ink); }
 
     /* ── FOOTER ── */
     footer {
-      background: #111;
-      color: #555;
+      background: #3a6b4a;
+      color: rgba(255,255,255,0.7);
       text-align: center;
       padding: 1.5rem;
       font-size: 0.75rem;
@@ -361,7 +362,6 @@
 
   <!-- NAV -->
   <nav>
-    <a class="nav-name" href="index.html">Lily Casura, MSW</a>
     <ul class="nav-links">
       <li><a href="research.html">Research</a></li>
       <li><a href="data.html">Data Mastery</a></li>
@@ -382,8 +382,7 @@
         <h1 class="hero-name">Lily<br>Casura</h1>
         <img class="hero-photo" src="lily-casura.jpg" alt="Lily Casura">
       </div>
-      <p class="hero-eyebrow">Public Scholar</p>
-      <p class="hero-title"><strong>Public Scholar</strong><br><em>Research, Journalism & Data</em></p>
+      <p class="hero-title"><strong>Public Scholar</strong><br><em>Starts with a question. Ends with something built.</em></p>
       <div class="hero-bio">
         <p>Lily Casura, MSW is a public scholar whose work sits at the intersection of research, journalism, and data. She investigates the issues that shape vulnerable communities — women veterans experiencing homelessness, domestic violence, poverty, wage equity, and the demographics of inequality — and translates that work into forms that reach both academic audiences and the general public.</p>
         <p>Her journalism has appeared in <em>The Huffington Post</em>, <em>The Texas Tribune</em>, the <em>San Antonio Express-News</em>, <em>The Rivard Report</em>, and elsewhere. Her academic work has been published in the <em>Journal of Military, Veteran and Family Health</em> and in edited volumes from Oxford University Press and Springer Nature.</p>
@@ -413,6 +412,11 @@
         <div class="stat-label">San Antonio, 2019</div>
         <div class="stat-detail">Coming Out of the Shadows: Women Veterans & Homelessness</div>
       </div>
+      <div class="stat-block">
+        <div class="stat-number">50K+</div>
+        <div class="stat-label">Published words on women veterans and homelessness</div>
+        <div class="stat-detail">Research that inspired a character on a popular crime drama</div>
+      </div>
     </div>
   </section>
 
@@ -421,48 +425,19 @@
     <p class="section-label">What I do</p>
     <h2 class="section-heading">Areas of Work</h2>
     <div class="areas-grid">
-      <a class="area-card" href="research.html">
-        <div class="area-icon">🔬</div>
-        <div class="area-name">Research</div>
-        <p class="area-desc">Survey research, community-wide studies, and peer-reviewed publications — with a specialty in vulnerable populations and policy implications.</p>
-      </a>
-      <a class="area-card" href="data.html">
-        <div class="area-icon">📊</div>
-        <div class="area-name">Data Mastery</div>
-        <p class="area-desc">Demographic analysis, data visualization, and mapping — including a Tableau Public Viz of the Day award.</p>
-      </a>
-      <a class="area-card" href="journalism.html">
-        <div class="area-icon">✒️</div>
-        <div class="area-name">Journalism</div>
-        <p class="area-desc">150+ articles, commentaries, and features across national and local outlets — making complex data legible to general audiences.</p>
-      </a>
-      <a class="area-card" href="ai.html">
-        <div class="area-icon">🤖</div>
-        <div class="area-name">Consulting & AI</div>
-        <p class="area-desc">Exploring the intersection of AI tools and nonprofit work, with Anthropic certifications in Claude and AI for Nonprofits.</p>
-      </a>
-      <a class="area-card" href="projects.html">
-        <div class="area-icon">🛠️</div>
-        <div class="area-name">Projects</div>
-        <p class="area-desc">Community tools built from scratch — online directories, resource hubs, and civic groups serving thousands during times of need.</p>
-      </a>
-      <a class="area-card" href="grants.html">
-        <div class="area-icon">🏆</div>
-        <div class="area-name">Grants & Recognition</div>
-        <p class="area-desc">National awards, research grants totaling ~$300K, and media recognition — including the IWMF's Howard G. Buffett Fund.</p>
-      </a>
-      <a class="area-card" href="speaking.html">
-        <div class="area-icon">🎙️</div>
-        <div class="area-name">Speaking</div>
-        <p class="area-desc">Keynotes, conference presentations, and panels at national venues — including TEDx San Antonio and the American Public Health Association.</p>
-      </a>
+      <a class="area-btn" href="research.html">Research</a>
+      <a class="area-btn" href="data.html">Data Mastery</a>
+      <a class="area-btn" href="journalism.html">Journalism</a>
+      <a class="area-btn" href="ai.html">Consulting & AI</a>
+      <a class="area-btn" href="projects.html">Projects</a>
+      <a class="area-btn" href="grants.html">Grants & Recognition</a>
+      <a class="area-btn" href="speaking.html">Speaking</a>
     </div>
   </section>
 
   <!-- SELECTED HIGHLIGHTS -->
   <section class="highlights">
-    <p class="section-label">Selected highlights</p>
-    <h2 class="section-heading">A Few Things Worth Noting</h2>
+    <h2 class="section-heading">Highlights Worth Noting</h2>
     <div class="highlight-list">
       <div class="highlight-item">
         <span class="highlight-year">2026</span>
@@ -483,6 +458,11 @@
         <span class="highlight-year">2019</span>
         <span class="highlight-text">TEDx San Antonio — "Coming Out of the Shadows: Women Veterans and Homelessness after Military Service"</span>
         <span class="highlight-tag">Speaking</span>
+      </div>
+      <div class="highlight-item">
+        <span class="highlight-year">2017–present</span>
+        <span class="highlight-text">Principal investigator, groundbreaking study on women veterans and homelessness — 50,000+ published words and a character inspired by the work on a popular crime drama</span>
+        <span class="highlight-tag">Research</span>
       </div>
       <div class="highlight-item">
         <span class="highlight-year">2017</span>
@@ -514,10 +494,8 @@
 
   <!-- CONTACT -->
   <section class="contact" id="contact">
-    <p class="section-label">Get in touch</p>
-    <h2 class="section-heading">Let's Talk</h2>
-    <p class="contact-sub">For research collaborations, consulting, speaking inquiries, or press.</p>
-    <a class="contact-email" href="mailto:lily@lilygc.com">lily@lilygc.com</a>
+    <p class="section-label">Contact</p>
+    <a class="contact-email" href="mailto:lily.casura@gmail.com">lily.casura@gmail.com</a>
   </section>
 
   <footer>
