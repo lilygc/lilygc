@@ -3,50 +3,121 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Service — Lily Casura, MSW</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+  <title>Built Projects — Lily Casura, MSW</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --ink: #1a1a1a; --paper: #f7f4ef; --mist: #e8e3da;
-      --sage: #5c7a6b; --rust: #8b4a2f; --mid: #6b6560; --white: #ffffff;
-    }
+    :root { --ink: #1e3a2f; --paper: #f7f4ef; --mist: #e8e3da; --mid: #4a6b5a; --forest: #3a6b4a; --sage-light: #ddeae3; --white: #ffffff; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--paper); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 17px; line-height: 1.7; }
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--paper); border-bottom: 1px solid var(--mist); padding: 0 2.5rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
-    .nav-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: var(--ink); text-decoration: none; }
-    .nav-links { display: flex; gap: 1.6rem; list-style: none; }
-    .nav-links a { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--sage); }
-    .page-header { padding: 10rem 5rem 5rem; max-width: 760px; }
-    .section-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.75rem; }
-    .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 600; line-height: 1.1; margin-bottom: 1.5rem; }
-    .coming-soon { padding: 4rem 5rem 8rem; border-top: 1px solid var(--mist); font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; color: var(--mid); }
-    footer { background: #3a6b4a; color: rgba(255,255,255,0.7); text-align: center; padding: 1.5rem; font-size: 0.75rem; }
-    @media (max-width: 900px) { .nav-links { display: none; } .page-header { padding: 7rem 2rem 3rem; } .coming-soon { padding: 3rem 2rem 6rem; } }
+    body { background: var(--paper); color: var(--ink); font-family: Georgia, serif; font-size: 18px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #3a6b4a; padding: 0 2.5rem; display: flex; align-items: center; justify-content: flex-end; height: 48px; }
+    .nav-links { display: flex; gap: 0.5rem; list-style: none; }
+    .nav-links a { font-family: Georgia, serif; font-size: 0.72rem; color: rgba(255,255,255,0.85); text-decoration: none; border: 1px solid rgba(255,255,255,0.3); padding: 0.25rem 0.65rem; border-radius: 2px; transition: color 0.2s, border-color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: #fff; border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.15); }
+    .nav-links a.active { color: #fff; border-color: rgba(255,255,255,0.6); }
+    .page-header { padding: 6rem 4rem 1.5rem; max-width: 860px; }
+    .section-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--forest); margin-bottom: 0.75rem; }
+    .page-title { font-family: Georgia, serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 600; line-height: 1.1; margin-bottom: 1rem; }
+    .page-intro { font-size: 1rem; color: var(--mid); max-width: 640px; line-height: 1.8; }
+    .content { padding: 1.5rem 4rem 3rem; }
+    .project-block { max-width: 760px; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--mist); }
+    .project-block:last-child { border-bottom: none; }
+    .project-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--forest); margin-bottom: 0.35rem; }
+    .project-title { font-family: Georgia, serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+    .project-title a { color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s, color 0.2s; }
+    .project-title a:hover { color: var(--forest); border-bottom-color: var(--forest); }
+    .project-desc { font-size: 0.95rem; line-height: 1.8; color: var(--ink); margin-bottom: 0.5rem; }
+    .project-stat { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; color: var(--forest); margin-bottom: 0.75rem; }
+    .page-img { display: block; max-width: 100%; height: auto; margin: 1.25rem 0 0.4rem; border: 1px solid var(--mist); }
+    .page-img.full { max-width: 700px; }
+    .page-img.medium { max-width: 500px; }
+    .img-caption { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); margin-bottom: 1rem; }
+    footer { background: #3a6b4a; color: rgba(255,255,255,0.7); text-align: center; padding: 1.5rem; font-size: 0.75rem; letter-spacing: 0.05em; }
+    @media (max-width: 900px) { .nav-links { display: none; } .page-header { padding: 6rem 2rem 1.5rem; } .content { padding: 1.5rem 2rem 3rem; } }
   </style>
 </head>
 <body>
   <nav>
-    <a class="nav-name" href="index.html">Lily Casura, MSW</a>
     <ul class="nav-links">
       <li><a href="research.html">Research</a></li>
       <li><a href="data.html">Data Mastery</a></li>
       <li><a href="journalism.html">Journalism</a></li>
-      <li><a href="ai.html">AI & Consulting</a></li>
-      <li><a href="projects.html">Service</a></li>
+      <li><a href="ai.html">Consulting & AI</a></li>
+      <li><a href="projects.html" class="active">Built Projects</a></li>
       <li><a href="grants.html">Grants & Recognition</a></li>
       <li><a href="speaking.html">Speaking</a></li>
       <li><a href="in-their-words.html">In Their Words</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
   </nav>
+
   <div class="page-header">
-    <p class="section-label">Lily Casura, MSW</p>
-    <h1 class="page-title">Service</h1>
+    <p class="section-label">Built Projects</p>
+    <h1 class="page-title">Built Projects</h1>
+    <p class="page-intro">Things that started with a question and ended with something built — websites, online communities, civic tools, directories, and research made accessible. Built because the gap was there.</p>
   </div>
-  <div class="coming-soon">Content coming soon.</div>
+
+  <div class="content">
+
+    <div class="project-block">
+      <p class="project-label">2005 — present</p>
+      <p class="project-title"><a href="https://www.healingcombattrauma.com" target="_blank">Healing Combat Trauma</a></p>
+      <p class="project-stat">First website on combat veterans and PTSD · 1,000+ articles over multiple years · Recently completely reimagined</p>
+      <p class="project-desc">Founded in 2005 — the first website to address the issue of combat veterans and post-traumatic stress disorder. Over the years it grew to more than 1,000 articles, becoming a substantive resource for veterans, families, and the clinicians and therapists who serve them.</p>
+      <p class="project-desc">Recently reconceptualized and completely rebuilt as a "journey" experience — structured around the lived experience of veterans, those they love, and the professionals who support them. A chapter about the site, its vision, and its impact was published in <em>Healing War Trauma: A Handbook of Creative Approaches</em> (Routledge, 2013).</p>
+    </div>
+
+    <div class="project-block">
+      <p class="project-label">2015 — present</p>
+      <p class="project-title">Women Veterans Housing Directory</p>
+      <p class="project-stat">State-by-state resource directory · Active since 2015</p>
+      <p class="project-desc">A state-by-state directory of housing resources for women veterans who are precariously housed or anticipating homelessness — built as part of the IWMF-funded multimedia reporting project and maintained since. Part of a body of work that has generated 50,000+ published words and research that inspired a character on a popular crime drama.</p>
+
+      <img class="page-img full" src="img-women-veterans-homelessness-quotes.jpg" alt="Collage of quotes from women veterans about homelessness, turned into shareable graphics">
+      <p class="img-caption">Quotes from women veterans, turned into graphics to reach audiences beyond academic publishing</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:700px;margin:1.25rem 0 0.4rem;">
+        <div>
+          <img style="width:100%;border:1px solid var(--mist);" src="img-hwv-illustration-mom-child.jpg" alt="Commissioned illustration of woman veteran with child">
+          <p class="img-caption">Commissioned illustration for the women veterans research</p>
+        </div>
+        <div>
+          <img style="width:100%;border:1px solid var(--mist);" src="img-hwv-illustration-map-out-of-homelessness.jpg" alt="Illustrated map showing path from military service to housing stability">
+          <p class="img-caption">Commissioned "map out of homelessness" for women veterans</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-block">
+      <p class="project-label">2020 — 2021 · revived 2024</p>
+      <p class="project-title">Bexar County Voting Location Wait Times</p>
+      <p class="project-stat">Public Facebook group · 5.7K members</p>
+      <p class="project-desc">Created in October 2020 to crowdsource voting location wait times during San Antonio's lengthy early voting period — when no official tracker existed. "No politics. No spam. Just short wait times." Covered by KENS-5, Telemundo, and the San Antonio Express-News. Revived for the 2024 election cycle.</p>
+
+      <img class="page-img medium" src="img-bexar-voting-wait-times.png" alt="Screenshot of Bexar County Voting Location Wait Times Facebook group">
+      <p class="img-caption">Bexar County Voting Location Wait Times — 5.7K members, 2020</p>
+    </div>
+
+    <div class="project-block">
+      <p class="project-label">February — June 2021</p>
+      <p class="project-title">Bexar County Crisis Recovery</p>
+      <p class="project-stat">Public Facebook group · Crisis resource hub</p>
+      <p class="project-desc">Created in the aftermath of the February 2021 snow and ice emergency to curate and vet resources for San Antonio and Bexar County residents. Built from scratch during the crisis and maintained through recovery.</p>
+    </div>
+
+    <div class="project-block">
+      <p class="project-label">2018</p>
+      <p class="project-title">2018 Community Needs Assessment — Made Accessible</p>
+      <p class="project-stat">300+ page report · Tableau visualizations · Partner resources · City of San Antonio</p>
+      <p class="project-desc">The comprehensive Community Needs Assessment was conducted under the auspices of the City of San Antonio's Community Services Block Grant. The report itself was 300+ pages — but the project didn't stop there. The findings were translated into Tableau visualizations, a partner excerpt for nonprofits and agencies, and online resources, all to maximize reach and usability beyond the report itself.</p>
+
+      <img class="page-img full" src="img-community-needs-assessment-key-informants.png" alt="Collage of key informants interviewed for the 2018 Community Needs Assessment">
+      <p class="img-caption">Key informants interviewed across San Antonio and Bexar County</p>
+
+      <img class="page-img full" src="img-cna-2018-results.png" alt="2018 CNA results graphic showing links to Tableau visualizations and reports">
+      <p class="img-caption">Results made available online in multiple formats including Tableau</p>
+    </div>
+
+  </div>
   <footer>&copy; 2026 Lily Casura, MSW &nbsp;·&nbsp; lilygc.com</footer>
 </body>
 </html>

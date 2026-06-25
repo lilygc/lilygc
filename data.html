@@ -6,179 +6,49 @@
   <title>Data Mastery — Lily Casura, MSW</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --ink:       #1e3a2f;
-      --paper:     #f7f4ef;
-      --mist:      #e8e3da;
-      --sage:      #2d5a3d;
-      --sage-light:#ddeae3;
-      --mid:       #4a6b5a;
-      --forest:    #3a6b4a;
-      --white:     #ffffff;
-    }
+    :root { --ink: #1e3a2f; --paper: #f7f4ef; --mist: #e8e3da; --mid: #4a6b5a; --forest: #3a6b4a; --sage-light: #ddeae3; --white: #ffffff; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: Georgia, serif;
-      font-size: 18px;
-      line-height: 1.7;
-    }
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: #3a6b4a;
-      padding: 0 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      height: 48px;
-    }
-    .nav-links {
-      display: flex;
-      gap: 0.5rem;
-      list-style: none;
-    }
-    .nav-links a {
-      font-family: Georgia, serif;
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.3);
-      padding: 0.25rem 0.65rem;
-      border-radius: 2px;
-      transition: color 0.2s, border-color 0.2s, background 0.2s;
-    }
-    .nav-links a:hover {
-      color: #ffffff;
-      border-color: rgba(255,255,255,0.7);
-      background: rgba(255,255,255,0.15);
-    }
-    .nav-links a.active {
-      color: #ffffff;
-      border-color: rgba(255,255,255,0.6);
-    }
-    .page-header {
-      padding: 8rem 5rem 3rem;
-      max-width: 860px;
-    }
-    .section-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--forest);
-      margin-bottom: 0.75rem;
-    }
-    .page-title {
-      font-family: Georgia, serif;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 600;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-    }
-    .page-intro {
-      font-size: 1rem;
-      color: var(--mid);
-      max-width: 640px;
-      line-height: 1.8;
-    }
-    .content {
-      padding: 2rem 5rem 6rem;
-      max-width: 820px;
-    }
-    .data-block {
-      margin-bottom: 4rem;
-      padding-bottom: 4rem;
-      border-bottom: 1px solid var(--mist);
-    }
+    body { background: var(--paper); color: var(--ink); font-family: Georgia, serif; font-size: 18px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #3a6b4a; padding: 0 2.5rem; display: flex; align-items: center; justify-content: flex-end; height: 48px; }
+    .nav-links { display: flex; gap: 0.5rem; list-style: none; }
+    .nav-links a { font-family: Georgia, serif; font-size: 0.72rem; color: rgba(255,255,255,0.85); text-decoration: none; border: 1px solid rgba(255,255,255,0.3); padding: 0.25rem 0.65rem; border-radius: 2px; transition: color 0.2s, border-color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: #fff; border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.15); }
+    .nav-links a.active { color: #fff; border-color: rgba(255,255,255,0.6); }
+    .page-header { padding: 6rem 4rem 1.5rem; max-width: 860px; }
+    .section-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--forest); margin-bottom: 0.75rem; }
+    .page-title { font-family: Georgia, serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 600; line-height: 1.1; margin-bottom: 1rem; }
+    .page-intro { font-size: 1rem; color: var(--mid); max-width: 640px; line-height: 1.8; }
+    .content { padding: 1.5rem 4rem 3rem; max-width: 820px; }
+    .data-block { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--mist); }
     .data-block:last-child { border-bottom: none; }
-    .data-block h2 {
-      font-family: Georgia, serif;
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 1.25rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid var(--mist);
-    }
-    .data-block p {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--ink);
-      margin-bottom: 1rem;
-    }
-    .tableau-link {
-      display: inline-block;
-      margin-top: 0.5rem;
-      font-family: Georgia, serif;
-      font-size: 1rem;
-      font-style: italic;
-      color: var(--forest);
-      text-decoration: none;
-      border-bottom: 1px solid var(--forest);
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .tableau-link:hover { color: var(--ink); border-color: var(--ink); }
-    .award-callout {
-      background: var(--sage-light);
-      border-left: 3px solid var(--forest);
-      padding: 1rem 1.5rem;
-      margin: 1.5rem 0;
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
+    .data-block h2 { font-family: Georgia, serif; font-size: 1.4rem; font-weight: 600; color: var(--ink); margin-bottom: 1rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--mist); }
+    .data-block p { font-size: 1rem; line-height: 1.8; color: var(--ink); margin-bottom: 0.75rem; }
+    .tableau-link { display: inline-block; margin-top: 0.25rem; font-family: Georgia, serif; font-size: 1rem; font-style: italic; color: var(--forest); text-decoration: none; border-bottom: 1px solid var(--forest); transition: color 0.2s; }
+    .tableau-link:hover { color: var(--ink); }
+    .award-callout { background: var(--sage-light); border-left: 3px solid var(--forest); padding: 0.9rem 1.25rem; margin: 1rem 0; font-size: 0.95rem; line-height: 1.7; }
     .award-callout strong { color: var(--forest); }
-    .item {
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--mist);
-    }
+    .item { padding: 0.9rem 0; border-bottom: 1px solid var(--mist); }
     .item:last-child { border-bottom: none; }
-    .item-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--forest);
-      margin-bottom: 0.3rem;
-    }
-    .item-title {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 0.2rem;
-    }
-    .item-meta {
-      font-size: 0.9rem;
-      font-style: italic;
-      color: var(--mid);
-    }
-    footer {
-      background: #3a6b4a;
-      color: rgba(255,255,255,0.7);
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.75rem;
-      letter-spacing: 0.05em;
-    }
-    @media (max-width: 900px) {
-      .nav-links { display: none; }
-      .page-header { padding: 6rem 2rem 2rem; }
-      .content { padding: 2rem 2rem 4rem; }
-    }
+    .item-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--forest); margin-bottom: 0.25rem; }
+    .item-title { font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.15rem; }
+    .item-meta { font-size: 0.9rem; font-style: italic; color: var(--mid); }
+    .page-img { display: block; max-width: 100%; height: auto; margin: 1.25rem 0 0.4rem; border: 1px solid var(--mist); }
+    .page-img.full { max-width: 700px; }
+    .img-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; max-width: 700px; margin: 1.25rem 0 0.4rem; }
+    .img-pair img { width: 100%; height: auto; border: 1px solid var(--mist); }
+    .img-caption { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); margin-bottom: 1rem; }
+    footer { background: #3a6b4a; color: rgba(255,255,255,0.7); text-align: center; padding: 1.5rem; font-size: 0.75rem; letter-spacing: 0.05em; }
+    @media (max-width: 900px) { .nav-links { display: none; } .page-header { padding: 6rem 2rem 1.5rem; } .content { padding: 1.5rem 2rem 3rem; } .img-pair { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
-
   <nav>
     <ul class="nav-links">
       <li><a href="research.html">Research</a></li>
       <li><a href="data.html" class="active">Data Mastery</a></li>
       <li><a href="journalism.html">Journalism</a></li>
       <li><a href="ai.html">Consulting & AI</a></li>
-      <li><a href="projects.html">Projects</a></li>
+      <li><a href="projects.html">Built Projects</a></li>
       <li><a href="grants.html">Grants & Recognition</a></li>
       <li><a href="speaking.html">Speaking</a></li>
       <li><a href="in-their-words.html">In Their Words</a></li>
@@ -189,7 +59,7 @@
   <div class="page-header">
     <p class="section-label">Data Mastery</p>
     <h1 class="page-title">Data Mastery</h1>
-    <p class="page-intro">Demographic analysis, data visualization, and mapping — translating complex population data into forms that inform policy decisions and reach general audiences. Over 100 published visualizations on Tableau Public, spanning poverty, equity, veterans, domestic violence, and community demographics.</p>
+    <p class="page-intro">Demographic analysis, data visualization, and mapping — translating complex population data into forms that inform policy and reach general audiences. Over 100 published visualizations on Tableau Public, spanning poverty, equity, veterans, domestic violence, and community demographics.</p>
   </div>
 
   <div class="content">
@@ -197,94 +67,108 @@
     <div class="data-block">
       <h2>Tableau Public</h2>
       <p>More than 100 data visualizations published on Tableau Public, covering population characteristics, poverty, equity, domestic violence, eviction, migration, veterans, and more — primarily focused on San Antonio and Bexar County, with national work as well.</p>
-
       <div class="award-callout">
         <strong>Tableau Public "Viz of the Day" Award, 2017</strong><br>
         "San Antonio Population Characteristics by ZIP Code" was selected by Tableau Public's editors as their featured visualization — a peer recognition in the data visualization community.
       </div>
-
       <a class="tableau-link" href="https://public.tableau.com/app/profile/lilygc/vizzes" target="_blank">View all visualizations on Tableau Public →</a>
     </div>
 
     <div class="data-block">
-      <h2>Selected Data Projects</h2>
+      <h2>Hardship Index Mapping</h2>
+      <p>Using Census data to map community hardship across San Antonio ZIP codes and Bexar County census tracts — making inequality visible and geographically legible for policymakers and the public.</p>
 
-      <div class="item">
-        <p class="item-label">2019</p>
-        <p class="item-title">Evictions by Census Tract in San Antonio and Bexar County</p>
-        <p class="item-meta">Poster session, UTSA College of Public Policy faculty and student showcase.</p>
-      </div>
-
-      <div class="item">
-        <p class="item-label">2019</p>
-        <p class="item-title">Selected Risk Factors by Feeder Pattern: Eviction, Domestic Violence, and Grandparents Raising Grandchildren</p>
-        <p class="item-meta">With M.E. Garza. San Antonio ISD Family and Student Support Services.</p>
-      </div>
-
-      <div class="item">
-        <p class="item-label">2018–2019</p>
-        <p class="item-title">San Antonio Community Needs Assessment — Data Visualizations</p>
-        <p class="item-meta">Presented to City of San Antonio Economic Development Department, Human Services Department, Community Action Advisory Board, SA2020's Family Lives commission, and others.</p>
-      </div>
-
-      <div class="item">
-        <p class="item-label">2017</p>
-        <p class="item-title">San Antonio Population Characteristics by ZIP Code</p>
-        <p class="item-meta">Tableau Public Viz of the Day. Demographic analysis of poverty, race, education, and equity across San Antonio ZIP codes.</p>
-      </div>
-
-      <div class="item">
-        <p class="item-label">2017</p>
-        <p class="item-title">Population Characteristics of Harlandale ISD ZIP Codes</p>
-        <p class="item-meta">Presented to 30 Harlandale ISD school social workers. San Antonio, TX.</p>
-      </div>
-
-      <div class="item">
-        <p class="item-label">2015–present</p>
-        <p class="item-title">Women Veterans and Homelessness — Data Visualizations</p>
-        <p class="item-meta">Series of national and state-level visualizations produced as part of IWMF-funded multimedia reporting project and ongoing IRB-approved research.</p>
+      <div class="img-pair">
+        <div>
+          <img src="img-hardship-index-city.jpg" alt="Hardship index map of San Antonio by ZIP code, green to red gradient">
+          <p class="img-caption">Hardship index, San Antonio by ZIP code</p>
+        </div>
+        <div>
+          <img src="img-hardship-index-bexar-county.png" alt="Hardship index map of Bexar County">
+          <p class="img-caption">Hardship index, Bexar County</p>
+        </div>
       </div>
     </div>
 
     <div class="data-block">
-      <h2>Teaching Data & Visualization</h2>
+      <h2>Women Veterans & Homelessness — National Data</h2>
+      <p>County-level analysis of women veterans at risk for homelessness across Texas, built from U.S. Census data as part of the IWMF-funded reporting project and ongoing IRB-approved research.</p>
 
-      <div class="item">
-        <p class="item-label">UTSA · Fall 2025 & Spring 2026</p>
-        <p class="item-title">Advanced Research Methods: Program Evaluation / Transformational Leadership</p>
-        <p class="item-meta">Adjunct professor, UTSA Master of Social Work program. Data analysis and research methods integrated throughout.</p>
+      <div class="img-pair">
+        <div>
+          <img src="img-women-veterans-texas-homelessness-risk.jpg" alt="Map of women veterans at risk for homelessness in Texas by county">
+          <p class="img-caption">Women veterans at risk for homelessness, Texas by county</p>
+        </div>
+        <div>
+          <img src="img-women-veterans-texas-county.jpg" alt="Women veterans in Texas by county, percentage map">
+          <p class="img-caption">Women veterans in Texas, percentage by county</p>
+        </div>
       </div>
+    </div>
+
+    <div class="data-block">
+      <h2>Domestic Violence Survey — Geographic Distribution</h2>
+      <p>Visualization of survey respondents by ZIP code from the 2021 community-wide domestic violence survey, showing geographic reach across Bexar County.</p>
+      <img class="page-img full" src="img-dv-survey-zip-map.png" alt="Map and chart showing DV survey respondents by ZIP code across Bexar County">
+      <p class="img-caption">Survey respondents by ZIP code — 2021 Community-Wide Domestic Violence Survey, San Antonio Metropolitan Health District</p>
+    </div>
+
+    <div class="data-block">
+      <h2>Community Needs Assessment — Data Made Accessible</h2>
+      <p>The 2018 Community Needs Assessment produced a 300+ page report — then translated into Tableau visualizations, a partner excerpt, and online resources to reach multiple audiences beyond the report itself.</p>
+      <img class="page-img full" src="img-cna-2018-results.png" alt="2018 Community Needs Assessment results showing links to online data visualizations">
+      <p class="img-caption">2018 CNA results made available in multiple formats online, including Tableau visualizations</p>
+    </div>
+
+    <div class="data-block">
+      <h2>McKinney-Vento Program Evaluation — SAISD</h2>
+      <p>As Research Analyst and then sole Program Evaluator at San Antonio Independent School District — a district of approximately 50,000 students — supported and then led evaluation of the federally-funded McKinney-Vento program for students experiencing homelessness. Under a data-driven approach, the program achieved its best performance in decades.</p>
+      <p>Built a comprehensive program evaluation with extensive data visualizations — tracking student outcomes, mobility patterns, service utilization, and program effectiveness across the district.</p>
+
+      <div style="background:var(--mist);padding:1.5rem;max-width:700px;margin:1.25rem 0;font-style:italic;color:var(--mid);font-size:0.95rem;">
+        [Placeholder — program evaluation visuals coming]
+      </div>
+    </div>
+
+    <div class="data-block">
+      <h2>COVID-19 ZIP Code Mapping — San Antonio</h2>
+      <p>In the early months of the COVID-19 pandemic, before local government had developed its own public-facing data tools, produced nightly maps of COVID-19 spread across San Antonio ZIP codes — with plain-language commentary shared on Facebook. For months, this was the primary source many residents turned to for geographic context on where the virus was hitting and how it was moving through the community.</p>
+      <p>The maps also challenged unexamined assumptions about wealth, poverty, and vulnerability — showing data where speculation had been filling the gap.</p>
+
+      <div style="background:var(--mist);padding:1.5rem;max-width:700px;margin:1.25rem 0;font-style:italic;color:var(--mid);font-size:0.95rem;">
+        [Placeholder — COVID ZIP code map visuals coming]
+      </div>
+    </div>
+
 
       <div class="item">
         <p class="item-label">UP Partnership · December 2019</p>
         <p class="item-title">"Mapping as a Tool"</p>
-        <p class="item-meta">Data Leadership Institute, a program designed to upskill local educational nonprofit employees in data literacy and mapping.</p>
+        <p class="item-meta">Data Leadership Institute — upskilling local educational nonprofit employees in data literacy and mapping.</p>
       </div>
-
       <div class="item">
         <p class="item-label">NASW Alamo Branch · October 2019</p>
         <p class="item-title">"Mapping as a Tool"</p>
         <p class="item-meta">National Association of Social Workers, Alamo Branch.</p>
       </div>
-
       <div class="item">
         <p class="item-label">YWCA San Antonio · September 2019</p>
         <p class="item-title">"Thinking about Data"</p>
         <p class="item-meta">With Catie White. YWCA San Antonio Board Retreat.</p>
       </div>
-
       <div class="item">
         <p class="item-label">UTSA · Guest Lectures</p>
         <p class="item-title">"Introduction to Population Data"</p>
-        <p class="item-meta">Guest lecturer in graduate-level course taught by Professor Huang, UTSA.</p>
+        <p class="item-meta">Guest lecturer, UTSA graduate course (Professor Huang).</p>
+      </div>
+      <div class="item">
+        <p class="item-label">Harlandale ISD · November 2017</p>
+        <p class="item-title">Population Characteristics of Harlandale ISD ZIP Codes</p>
+        <p class="item-meta">Presented to 30 Harlandale ISD school social workers.</p>
       </div>
     </div>
 
   </div>
-
-  <footer>
-    &copy; 2026 Lily Casura, MSW &nbsp;·&nbsp; lilygc.com
-  </footer>
-
+  <footer>&copy; 2026 Lily Casura, MSW &nbsp;·&nbsp; lilygc.com</footer>
 </body>
 </html>

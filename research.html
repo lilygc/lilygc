@@ -7,171 +7,75 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink:       #1e3a2f;
-      --paper:     #f7f4ef;
-      --mist:      #e8e3da;
-      --sage:      #2d5a3d;
-      --sage-light:#ddeae3;
-      --mid:       #4a6b5a;
-      --forest:    #3a6b4a;
-      --white:     #ffffff;
+      --ink:    #1e3a2f;
+      --paper:  #f7f4ef;
+      --mist:   #e8e3da;
+      --mid:    #4a6b5a;
+      --forest: #3a6b4a;
+      --white:  #ffffff;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: Georgia, serif;
-      font-size: 18px;
-      line-height: 1.7;
-    }
+    body { background: var(--paper); color: var(--ink); font-family: Georgia, serif; font-size: 18px; line-height: 1.7; }
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: #3a6b4a;
-      padding: 0 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      height: 48px;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: #3a6b4a; padding: 0 2.5rem;
+      display: flex; align-items: center; justify-content: flex-end; height: 48px;
     }
-    .nav-links {
-      display: flex;
-      gap: 0.5rem;
-      list-style: none;
-    }
+    .nav-links { display: flex; gap: 0.5rem; list-style: none; }
     .nav-links a {
-      font-family: Georgia, serif;
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.3);
-      padding: 0.25rem 0.65rem;
-      border-radius: 2px;
+      font-family: Georgia, serif; font-size: 0.72rem; color: rgba(255,255,255,0.85);
+      text-decoration: none; border: 1px solid rgba(255,255,255,0.3);
+      padding: 0.25rem 0.65rem; border-radius: 2px;
       transition: color 0.2s, border-color 0.2s, background 0.2s;
     }
-    .nav-links a:hover {
-      color: #ffffff;
-      border-color: rgba(255,255,255,0.7);
-      background: rgba(255,255,255,0.15);
-    }
-    .nav-links a.active {
-      color: #ffffff;
-      border-color: rgba(255,255,255,0.6);
-    }
-    .page-header {
-      padding: 8rem 5rem 3rem;
-      max-width: 860px;
-    }
+    .nav-links a:hover { color: #fff; border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.15); }
+    .nav-links a.active { color: #fff; border-color: rgba(255,255,255,0.6); }
+    .page-header { padding: 6rem 4rem 1.5rem; max-width: 860px; }
     .section-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--forest);
-      margin-bottom: 0.75rem;
+      font-family: 'DM Mono', monospace; font-size: 0.68rem;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--forest); margin-bottom: 0.75rem;
     }
-    .page-title {
-      font-family: Georgia, serif;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 600;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-    }
-    .page-intro {
-      font-size: 1rem;
-      color: var(--mid);
-      max-width: 640px;
-      line-height: 1.8;
-    }
-    .content {
-      padding: 2rem 5rem 6rem;
-    }
-    .research-block {
-      max-width: 760px;
-      margin-bottom: 4rem;
-      padding-bottom: 4rem;
-      border-bottom: 1px solid var(--mist);
-    }
-    .research-block:last-child {
-      border-bottom: none;
-    }
+    .page-title { font-family: Georgia, serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 600; line-height: 1.1; margin-bottom: 1rem; }
+    .page-intro { font-size: 1rem; color: var(--mid); max-width: 640px; line-height: 1.8; }
+    .content { padding: 1.5rem 4rem 3rem; }
+    .research-block { max-width: 760px; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--mist); }
+    .research-block:last-child { border-bottom: none; }
     .research-block h2 {
-      font-family: Georgia, serif;
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 1.5rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid var(--mist);
+      font-family: Georgia, serif; font-size: 1.4rem; font-weight: 600;
+      color: var(--ink); margin-bottom: 1rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--mist);
     }
-    .pub-item {
-      padding: 1.2rem 0;
-      border-bottom: 1px solid var(--mist);
-    }
+    .pub-item { padding: 0.9rem 0; border-bottom: 1px solid var(--mist); }
     .pub-item:last-child { border-bottom: none; }
-    .pub-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--forest);
-      margin-bottom: 0.35rem;
-    }
-    .pub-title {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--ink);
-      line-height: 1.5;
-      margin-bottom: 0.25rem;
-    }
-    .pub-title a {
-      color: var(--ink);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .pub-title a:hover {
-      color: var(--forest);
-      border-bottom-color: var(--forest);
-    }
-    .pub-meta {
-      font-size: 0.9rem;
-      font-style: italic;
-      color: var(--mid);
-      line-height: 1.5;
-    }
-    .pub-note {
-      font-size: 0.9rem;
-      color: var(--mid);
-      margin-top: 0.35rem;
-      line-height: 1.6;
-    }
-    footer {
-      background: #3a6b4a;
-      color: rgba(255,255,255,0.7);
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.75rem;
-      letter-spacing: 0.05em;
-    }
+    .pub-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--forest); margin-bottom: 0.3rem; }
+    .pub-title { font-size: 1rem; font-weight: 600; color: var(--ink); line-height: 1.5; margin-bottom: 0.2rem; }
+    .pub-title a { color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s, color 0.2s; }
+    .pub-title a:hover { color: var(--forest); border-bottom-color: var(--forest); }
+    .pub-meta { font-size: 0.9rem; font-style: italic; color: var(--mid); line-height: 1.5; }
+    .pub-meta a { color: var(--forest); }
+    .pub-note { font-size: 0.9rem; color: var(--mid); margin-top: 0.3rem; line-height: 1.6; }
+    .page-img { display: block; max-width: 100%; height: auto; margin: 1.25rem 0 0.4rem; border: 1px solid var(--mist); }
+    .page-img.half { max-width: 420px; }
+    .page-img.full { max-width: 700px; }
+    .img-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; max-width: 700px; margin: 1.25rem 0 0.4rem; }
+    .img-pair img { width: 100%; height: auto; border: 1px solid var(--mist); }
+    .img-caption { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); margin-bottom: 1rem; }
+    footer { background: #3a6b4a; color: rgba(255,255,255,0.7); text-align: center; padding: 1.5rem; font-size: 0.75rem; letter-spacing: 0.05em; }
     @media (max-width: 900px) {
       .nav-links { display: none; }
-      .page-header { padding: 6rem 2rem 2rem; }
-      .content { padding: 2rem 2rem 4rem; }
+      .page-header { padding: 6rem 2rem 1.5rem; }
+      .content { padding: 1.5rem 2rem 3rem; }
+      .img-pair { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-
   <nav>
     <ul class="nav-links">
       <li><a href="research.html" class="active">Research</a></li>
       <li><a href="data.html">Data Mastery</a></li>
       <li><a href="journalism.html">Journalism</a></li>
       <li><a href="ai.html">Consulting & AI</a></li>
-      <li><a href="projects.html">Projects</a></li>
+      <li><a href="projects.html">Built Projects</a></li>
       <li><a href="grants.html">Grants & Recognition</a></li>
       <li><a href="speaking.html">Speaking</a></li>
       <li><a href="in-their-words.html">In Their Words</a></li>
@@ -187,10 +91,8 @@
 
   <div class="content">
 
-    <!-- PEER-REVIEWED -->
     <div class="research-block">
       <h2>Peer-Reviewed Journal Articles</h2>
-
       <div class="pub-item">
         <p class="pub-label">Journal of Military, Veteran and Family Health · 2026</p>
         <p class="pub-title"><a href="https://utppublishing.com/doi/10.3138/jmvfh-2025-0048" target="_blank">"When the Golden Years Are Not So Golden: Aging Women Veterans, MST, PTSD and Homelessness"</a></p>
@@ -198,22 +100,18 @@
       </div>
     </div>
 
-    <!-- BOOK CHAPTERS -->
     <div class="research-block">
       <h2>Book Chapters</h2>
-
       <div class="pub-item">
         <p class="pub-label">Springer Nature · 2025</p>
         <p class="pub-title"><a href="https://a.co/d/7kxjAlH" target="_blank">"Women Veterans, Poverty, and Homelessness"</a></p>
         <p class="pub-meta">Casura, L., & Harris, R. In Singelmann, J., & Poston, D. (Eds.), <em>International Handbook of the Demography of Poverty and Inequality</em>. Springer Nature.</p>
       </div>
-
       <div class="pub-item">
         <p class="pub-label">Oxford University Press · 2024</p>
         <p class="pub-title"><a href="https://a.co/d/eDcVW54" target="_blank">"On Doing Public Scholarship: A Dialogue"</a></p>
         <p class="pub-meta">Sáenz, R., & Casura, L. In Dolgon, C. (Ed.), <em>The Oxford Handbook of Sociology for Social Justice</em>. Oxford University Press.</p>
       </div>
-
       <div class="pub-item">
         <p class="pub-label">Routledge · 2013</p>
         <p class="pub-title">"Healing Combat Trauma: The Website, the Vision, the Impact"</p>
@@ -221,7 +119,6 @@
       </div>
     </div>
 
-    <!-- SURVEY RESEARCH -->
     <div class="research-block">
       <h2>Survey Research</h2>
 
@@ -230,20 +127,43 @@
         <p class="pub-title">Principal Investigator: "Internet Survey of Women Veterans re: Housing Instability post-Military Service"</p>
         <p class="pub-meta">IRB 15-189E. Faculty sponsor: Richard Harris, Ph.D. University of Texas at San Antonio.</p>
         <p class="pub-note">This IRB-approved study has generated 50,000+ published words on women veterans and homelessness — and research findings that inspired a character on a popular crime drama.</p>
+
+        <img class="page-img full" src="img-women-veterans-homelessness-quotes.jpg" alt="Quotes from women veterans on homelessness, turned into shareable graphics">
+        <p class="img-caption">Quotes gathered from survey respondents — turned into graphics to reach audiences beyond academic publishing</p>
+
+        <div class="img-pair">
+          <div>
+            <img src="img-hwv-illustration-mom-child.jpg" alt="Illustration of woman veteran with child">
+            <p class="img-caption">Commissioned illustration for the women veterans research</p>
+          </div>
+          <div>
+            <img src="img-hwv-illustration-map-out-of-homelessness.jpg" alt="Illustrated map showing path from military service to housing stability">
+            <p class="img-caption">Commissioned "map out of homelessness" for women veterans</p>
+          </div>
+        </div>
       </div>
 
       <div class="pub-item">
         <p class="pub-label">San Antonio Metropolitan Health District · 2021</p>
-        <p class="pub-title"><a href="https://www.sanantonio.gov/health" target="_blank">Community-Based Domestic Violence Survey of San Antonio and Bexar County — Summary Report</a></p>
+        <p class="pub-title">Community-Based Domestic Violence Survey of San Antonio and Bexar County — Summary Report</p>
         <p class="pub-meta">Casura, L., & Harris, R. (August, 2021). San Antonio Metropolitan Health District.</p>
         <p class="pub-note">Community-wide survey on domestic violence before and during COVID-19, conducted with a team of UTSA researchers. Part of a grant-funded project totaling approximately $150K.</p>
+
+        <img class="page-img full" src="img-dv-survey-zip-map.png" alt="Map showing survey respondents by ZIP code across Bexar County">
+        <p class="img-caption">Survey respondents by ZIP code — showing geographic distribution of participants across Bexar County</p>
       </div>
 
       <div class="pub-item">
         <p class="pub-label">City of San Antonio · 2018</p>
         <p class="pub-title">Comprehensive Community Needs Assessment</p>
         <p class="pub-meta">Hernandez, M., & Casura, L. (August, 2018). City of San Antonio.</p>
-        <p class="pub-note">Community-wide survey of low-income individuals and service providers.</p>
+        <p class="pub-note">Community-wide survey of low-income individuals and service providers. A 300+ page report with supplemental Tableau visualizations and a partner excerpt — translated into multiple formats for multiple audiences.</p>
+
+        <img class="page-img full" src="img-community-needs-assessment-key-informants.png" alt="Collage of key informants interviewed for the Community Needs Assessment">
+        <p class="img-caption">Key informants interviewed for the 2018 Community Needs Assessment</p>
+
+        <img class="page-img full" src="img-cna-2018-results.png" alt="2018 Community Needs Assessment results graphic showing links to online resources">
+        <p class="img-caption">CNA results made available online in multiple formats, including Tableau visualizations</p>
       </div>
 
       <div class="pub-item">
@@ -253,45 +173,58 @@
       </div>
     </div>
 
-    <!-- WHITE PAPERS & REPORTS -->
+    <div class="research-block">
+      <h2>Training & Certifications</h2>
+      <div class="pub-item">
+        <p class="pub-label">VA National Center for PTSD · May 2010</p>
+        <p class="pub-title">National Center for PTSD Training — Menlo Park, CA</p>
+        <p class="pub-meta">Weeklong immersion in PTSD and MST research, led by VA researchers. Menlo Park, CA. Competitive appointment.</p>
+        <img class="page-img full" src="img-ptsd-training-menlo-park.jpg" alt="Group photo from VA National Center for PTSD training, Menlo Park, CA, May 2010">
+        <p class="img-caption">National Center for PTSD training, Menlo Park, CA — May 2010</p>
+      </div>
+      <div class="pub-item">
+        <p class="pub-label">Center for Mind-Body Medicine, Washington D.C.</p>
+        <p class="pub-title">Practitioner and Advanced Level Certifications in Mind-Body Medicine</p>
+        <p class="pub-meta">Center for Mind-Body Medicine, Washington, D.C.</p>
+      </div>
+      <div class="pub-item">
+        <p class="pub-label">2017</p>
+        <p class="pub-title">Certificate of Continuing Professional Education — "Grounded Theory Methodologies for Social Justice Projects"</p>
+        <p class="pub-meta">Taught by Kathy Charmaz, Ph.D. — the leading theorist in grounded theory methodology.</p>
+      </div>
+    </div>
+
     <div class="research-block">
       <h2>White Papers & Reports</h2>
-
       <div class="pub-item">
         <p class="pub-label">N-IUSSP · 2020</p>
         <p class="pub-title"><a href="https://www.niussp.org/article/frontline-workers-in-the-u-s-race-ethnicity/" target="_blank">"Frontline Workers in the U.S.: Race, Ethnicity, and Gender"</a></p>
         <p class="pub-meta">Casura, L., Lowe, R., Martinez, C., Serpas, S., Castellanos, V., & Singelmann, J. (September, 2020). <em>N-IUSSP</em>, International Union for the Scientific Study of Population.</p>
       </div>
-
       <div class="pub-item">
         <p class="pub-label">Mayor's Commission on the Status of Women · 2019</p>
         <p class="pub-title"><a href="https://www.sanantonio.gov/Portals/0/Files/health/News/Reports/StatusOfWomen/StatusOfWomen-Full.pdf" target="_blank">"The Status of Women in San Antonio Report"</a></p>
-        <p class="pub-meta">Sáenz, R., & Casura, L. (May, 2019). Mayor's Commission on the Status of Women, City of San Antonio. <a href="https://www.sanantonio.gov/Portals/0/Files/health/News/Reports/StatusOfWomen/StatusOfWomen-Brief.pdf" target="_blank">Brief</a> · <a href="https://www.sanantonio.gov/Portals/0/Files/health/News/Reports/StatusOfWomen/StatusOfWomen-Full.pdf" target="_blank">Full report</a></p>
+        <p class="pub-meta">Sáenz, R., & Casura, L. (May, 2019). <a href="https://www.sanantonio.gov/Portals/0/Files/health/News/Reports/StatusOfWomen/StatusOfWomen-Brief.pdf" target="_blank">Brief</a> · <a href="https://www.sanantonio.gov/Portals/0/Files/health/News/Reports/StatusOfWomen/StatusOfWomen-Full.pdf" target="_blank">Full report</a></p>
       </div>
-
       <div class="pub-item">
         <p class="pub-label">UTSA Policy Studies Center · 2019</p>
         <p class="pub-title"><a href="http://bit.ly/20YearsDVMisdemeanors" target="_blank">"Examining 20 Years of Misdemeanor Family Violence Offenses in Bexar County"</a></p>
-        <p class="pub-meta">Casura, L., & Enriquez, R. (September, 2019). UTSA Policy Studies Center, San Antonio, TX.</p>
+        <p class="pub-meta">Casura, L., & Enriquez, R. (September, 2019). UTSA Policy Studies Center.</p>
       </div>
-
       <div class="pub-item">
         <p class="pub-label">UTSA Policy Studies Center · 2019</p>
         <p class="pub-title"><a href="http://bit.ly/10YearsDVFelonies" target="_blank">"Examining 10 Years of Felony Family Violence Offenses in Bexar County"</a></p>
-        <p class="pub-meta">Casura, L., & Enriquez, R. (August, 2019). UTSA Policy Studies Center, San Antonio, TX.</p>
+        <p class="pub-meta">Casura, L., & Enriquez, R. (August, 2019). UTSA Policy Studies Center.</p>
       </div>
-
       <div class="pub-item">
         <p class="pub-label">UTSA Policy Studies Center · 2019</p>
         <p class="pub-title"><a href="https://www.dropbox.com/s/5h7eosbhxd0wgou/house-flipping-final.pdf?dl=0" target="_blank">"Home Flipping Trends in San Antonio"</a></p>
-        <p class="pub-meta">Enriquez, R., & Casura, L. (2019). UTSA Policy Studies Center / City Council, San Antonio, TX.</p>
+        <p class="pub-meta">Enriquez, R., & Casura, L. (2019). UTSA Policy Studies Center / City Council.</p>
       </div>
     </div>
 
-    <!-- BOOKS -->
     <div class="research-block">
       <h2>Books</h2>
-
       <div class="pub-item">
         <p class="pub-label">Self Health Press · 2000</p>
         <p class="pub-title"><em>Gentle Medicine: Treating Chronic Fatigue Syndrome and Fibromyalgia Successfully with Natural Medicine</em></p>
@@ -299,22 +232,18 @@
       </div>
     </div>
 
-    <!-- CITED IN -->
     <div class="research-block">
       <h2>Work Cited In</h2>
-
       <div class="pub-item">
         <p class="pub-label">Routledge · 2018</p>
         <p class="pub-title"><em>Investigative Reporting: From Premise to Publication, 2nd Edition</em></p>
         <p class="pub-meta">Burstiner, M. (2018). New York, NY: Routledge.</p>
       </div>
-
       <div class="pub-item">
         <p class="pub-label">2018</p>
         <p class="pub-title"><em>Homelessness among U.S. Veterans: A Critical Perspective</em></p>
         <p class="pub-meta">Tsai, J. (Ed.). (2018).</p>
       </div>
-
       <div class="pub-item">
         <p class="pub-label">American Bar Association · 2010</p>
         <p class="pub-title"><em>The Lawyer's Guide to Working Smarter with Knowledge Tools</em></p>
@@ -324,9 +253,6 @@
 
   </div>
 
-  <footer>
-    &copy; 2026 Lily Casura, MSW &nbsp;·&nbsp; lilygc.com
-  </footer>
-
+  <footer>&copy; 2026 Lily Casura, MSW &nbsp;·&nbsp; lilygc.com</footer>
 </body>
 </html>
