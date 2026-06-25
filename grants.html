@@ -3,50 +3,180 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grants — Lily Casura, MSW</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+  <title>Grants & Recognition — Lily Casura, MSW</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --ink: #1a1a1a; --paper: #f7f4ef; --mist: #e8e3da;
-      --sage: #5c7a6b; --rust: #8b4a2f; --mid: #6b6560; --white: #ffffff;
-    }
+    :root { --ink: #1e3a2f; --paper: #f7f4ef; --mist: #e8e3da; --mid: #4a6b5a; --forest: #3a6b4a; --mint: #b5d0c5; --white: #ffffff; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--paper); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 17px; line-height: 1.7; }
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--paper); border-bottom: 1px solid var(--mist); padding: 0 2.5rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
-    .nav-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: var(--ink); text-decoration: none; }
-    .nav-links { display: flex; gap: 1.6rem; list-style: none; }
-    .nav-links a { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--sage); }
-    .page-header { padding: 7rem 4rem 1.5rem; max-width: 760px; }
-    .section-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.75rem; }
-    .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 600; line-height: 1.1; margin-bottom: 1.5rem; }
-    .coming-soon { padding: 4rem 5rem 8rem; border-top: 1px solid var(--mist); font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; color: var(--mid); }
-    footer { background: #3a6b4a; color: rgba(255,255,255,0.7); text-align: center; padding: 1.5rem; font-size: 0.75rem; }
-    @media (max-width: 900px) { .nav-links { display: none; } .page-header { padding: 7rem 2rem 3rem; } .coming-soon { padding: 3rem 2rem 6rem; } }
+    body { background: var(--paper); color: var(--ink); font-family: Georgia, serif; font-size: 18px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #3a6b4a; padding: 0 2.5rem; display: flex; align-items: center; justify-content: flex-end; height: 48px; }
+    .nav-links { display: flex; gap: 0.5rem; list-style: none; }
+    .nav-links a { font-family: Georgia, serif; font-size: 0.72rem; color: rgba(255,255,255,0.85); text-decoration: none; border: 1px solid rgba(255,255,255,0.3); padding: 0.25rem 0.65rem; border-radius: 2px; transition: color 0.2s, border-color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: #fff; border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.15); }
+    .nav-links a.active { color: #fff; border-color: rgba(255,255,255,0.6); }
+    .page-header { padding: 6rem 4rem 1.5rem; max-width: 860px; }
+    .section-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--forest); margin-bottom: 0.75rem; }
+    .page-title { font-family: Georgia, serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 600; line-height: 1.1; margin-bottom: 1rem; }
+    .page-intro { font-size: 1rem; color: var(--mid); max-width: 640px; line-height: 1.8; }
+    .content { padding: 1.5rem 4rem 3rem; }
+    .grants-block { max-width: 760px; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--mist); }
+    .grants-block:last-child { border-bottom: none; }
+    .grants-block h2 { font-family: Georgia, serif; font-size: 1.4rem; font-weight: 600; color: var(--ink); margin-bottom: 1rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--mist); }
+    .grant-item { padding: 0.9rem 0; border-bottom: 1px solid var(--mist); }
+    .grant-item:last-child { border-bottom: none; }
+    .grant-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--forest); margin-bottom: 0.3rem; }
+    .grant-title { font-size: 1rem; font-weight: 600; color: var(--ink); line-height: 1.5; margin-bottom: 0.2rem; }
+    .grant-title a { color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s, color 0.2s; }
+    .grant-title a:hover { color: var(--forest); border-bottom-color: var(--forest); }
+    .grant-meta { font-size: 0.9rem; font-style: italic; color: var(--mid); line-height: 1.5; }
+    .grant-note { font-size: 0.9rem; color: var(--mid); margin-top: 0.3rem; line-height: 1.6; }
+    .grant-amount { font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--forest); font-style: normal; margin-top: 0.2rem; }
+    .callout { background: var(--mint); border-left: 3px solid var(--forest); padding: 0.9rem 1.25rem; margin: 1rem 0; font-size: 0.95rem; line-height: 1.7; }
+    .callout strong { color: var(--forest); }
+    footer { background: #3a6b4a; color: rgba(255,255,255,0.7); text-align: center; padding: 1.5rem; font-size: 0.75rem; letter-spacing: 0.05em; }
+    @media (max-width: 900px) { .nav-links { display: none; } .page-header { padding: 6rem 2rem 1.5rem; } .content { padding: 1.5rem 2rem 3rem; } }
   </style>
 </head>
 <body>
   <nav>
-    <a class="nav-name" href="index.html">Lily Casura, MSW</a>
     <ul class="nav-links">
       <li><a href="research.html">Research</a></li>
       <li><a href="data.html">Data Mastery</a></li>
       <li><a href="journalism.html">Journalism</a></li>
-      <li><a href="ai.html">AI & Consulting</a></li>
-      <li><a href="service.html">Service</a></li>
-      <li><a href="grants.html">Grants & Recognition</a></li>
+      <li><a href="ai.html">Consulting & AI</a></li>
+      <li><a href="projects.html">Built Projects</a></li>
+      <li><a href="grants.html" class="active">Grants & Recognition</a></li>
       <li><a href="speaking.html">Speaking</a></li>
       <li><a href="in-their-words.html">In Their Words</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
   </nav>
+
   <div class="page-header">
-    <p class="section-label">Lily Casura, MSW</p>
-    <h1 class="page-title">Grants</h1>
+    <p class="section-label">Grants & Recognition</p>
+    <h1 class="page-title">Grants & Recognition</h1>
+    <p class="page-intro">Funding received, awards won, and instances where others have taken notice — from national journalism foundations to peer recognition in data visualization to citation in academic works.</p>
   </div>
-  <div class="coming-soon">Content coming soon.</div>
+
+  <div class="content">
+
+    <div class="grants-block">
+      <h2>Research Grants</h2>
+
+      <div class="grant-item">
+        <p class="grant-label">International Women's Media Foundation · 2015</p>
+        <p class="grant-title"><a href="https://www.iwmf.org/community/lily-casura/" target="_blank">Howard G. Buffett Fund for Women Journalists — Inaugural Grantee</a></p>
+        <p class="grant-amount">$19,500</p>
+        <p class="grant-meta">International Women's Media Foundation (IWMF)</p>
+        <p class="grant-note">Awarded to create a multimedia presentation — including extensive reporting, data visualization, and a curated resource website — about women veterans and homelessness in the U.S. One of the inaugural grantees of this fund.</p>
+        <div class="callout">
+          <strong>IWMF grantee profile:</strong> <a href="https://www.iwmf.org/community/lily-casura/" target="_blank" style="color:var(--forest);">iwmf.org/community/lily-casura</a> — includes nine pieces of published reporting produced under this grant.
+        </div>
+      </div>
+
+      <div class="grant-item">
+        <p class="grant-label">San Antonio Metropolitan Health District · 2021</p>
+        <p class="grant-title">Community-Wide Domestic Violence Survey Grant</p>
+        <p class="grant-amount">~$150,000</p>
+        <p class="grant-meta">San Antonio Metropolitan Health District (with UTSA research team)</p>
+        <p class="grant-note">Grant funding to conduct a community-wide survey on domestic violence before and during COVID-19 across San Antonio and Bexar County.</p>
+      </div>
+
+      <div class="grant-item">
+        <p class="grant-label">City of San Antonio · contributed to grant proposal</p>
+        <p class="grant-title">YWCA San Antonio — Teen Dating Violence Prevention Program</p>
+        <p class="grant-meta">City of San Antonio</p>
+        <p class="grant-note">Contributed substantially to a grant proposal for a teen dating violence prevention program at YWCA San Antonio, which received City of San Antonio funding. Amount TBD.</p>
+      </div>
+    </div>
+
+    <div class="grants-block">
+      <h2>Competitive Training & Appointments</h2>
+
+      <div class="grant-item">
+        <p class="grant-label">VA National Center for PTSD · May 2010</p>
+        <p class="grant-title">National Center for PTSD Training — Menlo Park, CA</p>
+        <p class="grant-meta">U.S. Department of Veterans Affairs, National Center for PTSD, Menlo Park, CA</p>
+        <p class="grant-note">Competitive appointment to a weeklong immersion in PTSD and MST research, led by VA researchers at one of the most respected PTSD research institutions in the world.</p>
+      </div>
+
+      <div class="grant-item">
+        <p class="grant-label">San Antonio/Bexar County · 2019–2021</p>
+        <p class="grant-title">U.S. Census Bureau Complete Count Committee — Appointed Member</p>
+        <p class="grant-meta">San Antonio/Bexar County Complete Count Committee</p>
+        <p class="grant-note">Appointed to the local committee supporting accurate Census enumeration for San Antonio and Bexar County.</p>
+      </div>
+    </div>
+
+    <div class="grants-block">
+      <h2>Awards</h2>
+
+      <div class="grant-item">
+        <p class="grant-label">Tableau Public · 2017</p>
+        <p class="grant-title">Data Viz of the Day</p>
+        <p class="grant-meta">Tableau Public editors' selection for "San Antonio Population Characteristics by ZIP Code"</p>
+        <p class="grant-note">Peer recognition in the data visualization community — selected from tens of thousands of published visualizations.</p>
+      </div>
+
+      <div class="grant-item">
+        <p class="grant-label">UTSA College of Public Policy · 2017</p>
+        <p class="grant-title">"Most Outstanding Graduate Student"</p>
+        <p class="grant-meta">University of Texas at San Antonio, College of Public Policy — four-program college</p>
+      </div>
+
+      <div class="grant-item">
+        <p class="grant-label">NASW Texas · 2016</p>
+        <p class="grant-title">"Outstanding Student of the Year"</p>
+        <p class="grant-meta">National Association of Social Workers — Texas chapter</p>
+      </div>
+
+      <div class="grant-item">
+        <p class="grant-label">NASW Alamo Branch · 2016</p>
+        <p class="grant-title">"Social Work Student of the Year"</p>
+        <p class="grant-meta">National Association of Social Workers — Alamo Branch</p>
+      </div>
+
+      <div class="grant-item">
+        <p class="grant-label">UTSA · 2014/15</p>
+        <p class="grant-title">"Foundation Student of the Year" — Inaugural Awardee</p>
+        <p class="grant-meta">UTSA College of Public Policy, Department of Social Work</p>
+      </div>
+    </div>
+
+    <div class="grants-block">
+      <h2>Work Cited In</h2>
+
+      <div class="grant-item">
+        <p class="grant-label">Routledge · 2018</p>
+        <p class="grant-title"><em>Investigative Reporting: From Premise to Publication, 2nd Edition</em></p>
+        <p class="grant-meta">Burstiner, M. (2018). New York, NY: Routledge.</p>
+      </div>
+
+      <div class="grant-item">
+        <p class="grant-label">2018</p>
+        <p class="grant-title"><em>Homelessness among U.S. Veterans: A Critical Perspective</em></p>
+        <p class="grant-meta">Tsai, J. (Ed.). (2018).</p>
+      </div>
+
+      <div class="grant-item">
+        <p class="grant-label">American Bar Association · 2010</p>
+        <p class="grant-title"><em>The Lawyer's Guide to Working Smarter with Knowledge Tools</em></p>
+        <p class="grant-meta">Lauritsen, M. (2010). American Bar Association.</p>
+      </div>
+    </div>
+
+    <div class="grants-block">
+      <h2>Media Recognition</h2>
+
+      <div class="grant-item">
+        <p class="grant-label">San Antonio magazine · September 2020</p>
+        <p class="grant-title"><a href="https://www.sanantoniomag.com/how-covid-19-is-impacting-domestic-violence-in-san-antonio/" target="_blank">"Lily Casura" — Profile</a></p>
+        <p class="grant-meta">San Antonio magazine, pp. 12–13. September 2020.</p>
+      </div>
+    </div>
+
+  </div>
+
   <footer>&copy; 2026 Lily Casura, MSW &nbsp;·&nbsp; lilygc.com</footer>
 </body>
 </html>
