@@ -10,6 +10,17 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: var(--paper); color: var(--ink); font-family: Georgia, serif; font-size: 18px; line-height: 1.7; }
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #3a6b4a; padding: 0 2.5rem; display: flex; align-items: center; justify-content: flex-end; height: 48px; }
+    .nav-name {
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.95);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      position: relative;
+      z-index: 1;
+      margin-right: auto;
+    }
     .nav-links { display: flex; gap: 0.5rem; list-style: none; }
     .nav-links a { font-family: Georgia, serif; font-size: 0.72rem; color: rgba(255,255,255,0.85); text-decoration: none; border: 1px solid rgba(255,255,255,0.3); padding: 0.25rem 0.65rem; border-radius: 2px; transition: color 0.2s, border-color 0.2s, background 0.2s; }
     .nav-links a:hover { color: #fff; border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.15); }
@@ -43,6 +54,7 @@
 </head>
 <body>
   <nav>
+    <a class="nav-name" href="index.html">Lily Casura, MSW</a>
     <ul class="nav-links">
       <li><a href="research.html">Research</a></li>
       <li><a href="data.html" class="active">Data Mastery</a></li>
