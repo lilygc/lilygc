@@ -33,19 +33,19 @@
       top: 0; left: 0; right: 0;
       z-index: 100;
       background: #3a6b4a;
-      border-bottom: 1px solid var(--mist);
       padding: 0 2.5rem;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      height: 60px;
+      justify-content: flex-end;
+      height: 48px;
     }
     .nav-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
+      font-family: Georgia, serif;
+      font-size: 1rem;
       font-weight: 600;
-      color: var(--ink);
+      color: rgba(255,255,255,0.95);
       text-decoration: none;
+      margin-right: auto;
     }
     .nav-links {
       display: flex;
@@ -53,25 +53,23 @@
       list-style: none;
     }
     .nav-links a {
+      font-family: Georgia, serif;
       font-size: 0.72rem;
-      font-weight: 400;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--mid);
+      color: rgba(255,255,255,0.85);
       text-decoration: none;
-      border: 1px solid var(--mist);
-      padding: 0.3rem 0.7rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 0.25rem 0.65rem;
       border-radius: 2px;
       transition: color 0.2s, border-color 0.2s, background 0.2s;
     }
     .nav-links a:hover {
-      color: var(--sage);
-      border-color: var(--sage);
-      background: #b5d0c5;
+      color: #fff;
+      border-color: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.15);
     }
     .nav-links a.active {
-      color: var(--sage);
-      border-color: var(--sage);
+      color: #fff;
+      border-color: rgba(255,255,255,0.6);
     }
     .page-header {
       padding: 7rem 4rem 1.5rem;
